@@ -1207,17 +1207,13 @@
   .sticky-cta-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
   /* ─── SCROLL ANIMATIONS ─── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .7s cubic-bezier(.4,0,.2,1),
-                transform .7s cubic-bezier(.4,0,.2,1);
+  .fade-up { opacity: 0; transform: translateY(24px); }
+  .listing-card, .area-row, .contact-line, .contact-form { opacity: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up, .listing-card, .area-row, .contact-line, .contact-form {
+      opacity: 1 !important; transform: none !important;
+    }
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  .fade-up-d1 { transition-delay: .1s; }
-  .fade-up-d2 { transition-delay: .2s; }
-  .fade-up-d3 { transition-delay: .3s; }
-  .fade-up-d4 { transition-delay: .4s; }
 
   /* ─── MOBILE ─── */
   @media (max-width: 900px) {
@@ -2324,18 +2320,35 @@
     });
   })();
 
-  // ── Scroll-triggered fade-up animations ──
+  // ── Scroll fade — in and out ──
   (function () {
-    var els = document.querySelectorAll('.fade-up');
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
+    var ENTER = 240, EXIT = 180;
+    var slideEls  = Array.prototype.slice.call(document.querySelectorAll('.fade-up'));
+    var fadeEls   = Array.prototype.slice.call(document.querySelectorAll('.listing-card, .area-row, .contact-line, .contact-form'));
+    var ticking   = false;
+
+    function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+    function update() {
+      var vh = window.innerHeight;
+      slideEls.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var enterT = clamp((vh - r.top) / ENTER);
+        var exitT  = clamp(r.bottom / EXIT);
+        el.style.opacity   = Math.min(enterT, exitT);
+        el.style.transform = 'translateY(' + ((1 - enterT) * 24) + 'px)';
       });
-    }, { threshold: 0.12 });
-    els.forEach(function (el) { obs.observe(el); });
+      fadeEls.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        el.style.opacity = Math.min(clamp((vh - r.top) / ENTER), clamp(r.bottom / EXIT));
+      });
+      ticking = false;
+    }
+
+    function onScroll() { if (!ticking) { requestAnimationFrame(update); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
   })();
 
   // ── Listing photo lightbox ──
