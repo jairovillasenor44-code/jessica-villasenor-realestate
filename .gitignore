@@ -1,0 +1,15 @@
+# Screenshots (local dev only)
+temporary screenshots/
+
+# Claude project memory
+.claude/
+
+# Temp dev scripts
+tmp_screenshot.mjs
+tmp_stats.mjs
+
+# Browser-saved asset folder (duplicate)
+Jessica Villaseñor — Engel & Völkers Reno_files/
+
+# Node
+node_modules/
