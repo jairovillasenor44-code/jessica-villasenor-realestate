@@ -686,6 +686,112 @@
     text-transform: uppercase; color: var(--accent);
   }
 
+  /* ─── WORK WITH JESSICA SCROLL CARD ─── */
+  #work-jessica { background: var(--bg); padding: 0; overflow: hidden; }
+  .wj-container {
+    height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .wj-perspective {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    perspective: 1000px;
+  }
+  .wj-header {
+    text-align: center;
+    margin-bottom: 0;
+    will-change: transform;
+  }
+  .wj-header h2 {
+    font-family: 'Gilda Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--ink);
+    margin: 8px 0 4px;
+  }
+  .wj-header p { color: var(--muted); font-size: .95rem; margin: 0; }
+  .wj-card {
+    margin-top: -12px;
+    will-change: transform;
+    transform-origin: center top;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(177,132,99,.22);
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a;
+    height: 420px;
+  }
+  .wj-card-inner {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100%;
+    overflow: hidden;
+  }
+  .wj-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .wj-content {
+    padding: 44px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+  }
+  .wj-content h3 {
+    font-family: 'Gilda Display', serif;
+    font-size: 1.7rem;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.25;
+  }
+  .wj-content > p { font-size: .93rem; color: var(--muted); line-height: 1.75; margin: 0; }
+  .wj-stats { display: flex; gap: 36px; }
+  .wj-stat-num {
+    font-family: 'Gilda Display', serif;
+    font-size: 1.55rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .wj-stat-lbl {
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .wj-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background .25s, transform .18s;
+  }
+  .wj-btn:hover { background: var(--accent); }
+  .wj-btn:active { transform: scale(.97); }
+  @media (max-width: 900px) {
+    .wj-container { height: auto; min-height: 600px; padding: 60px 16px; }
+    .wj-card { height: auto; }
+    .wj-card-inner { grid-template-columns: 1fr; }
+    .wj-photo { height: 220px; object-position: center 20%; }
+    .wj-content { padding: 28px 24px; }
+    .wj-stats { gap: 24px; }
+  }
+
   /* ─── CONTACT ─── */
   #contact {
     background: var(--green-dk);
@@ -1746,6 +1852,48 @@
   </div>
 </div>
 
+<!-- WORK WITH JESSICA -->
+<div id="work-jessica">
+  <div class="wj-container" id="wj-container">
+    <div class="wj-perspective">
+      <div class="wj-header" id="wj-header">
+        <p class="label" style="margin-bottom:6px;">Your trusted partner</p>
+        <h2>Work with Jessica</h2>
+        <p>Dedicated to finding the right home — or the right buyer — for every client.</p>
+      </div>
+      <div class="wj-card" id="wj-card">
+        <div class="wj-card-inner">
+          <img src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor" class="wj-photo">
+          <div class="wj-content">
+            <div>
+              <p class="label" style="margin-bottom:8px;">Why work with Jessica</p>
+              <h3>A dedicated advocate in every transaction.</h3>
+            </div>
+            <p>Whether you're buying your first home or selling an investment property, Jessica brings deep market knowledge, honest guidance, and hands-on support from offer to closing.</p>
+            <div class="wj-stats">
+              <div>
+                <div class="wj-stat-num">50+</div>
+                <div class="wj-stat-lbl">Transactions</div>
+              </div>
+              <div>
+                <div class="wj-stat-num">5 ★</div>
+                <div class="wj-stat-lbl">Client rating</div>
+              </div>
+              <div>
+                <div class="wj-stat-num">NV</div>
+                <div class="wj-stat-lbl">Licensed</div>
+              </div>
+            </div>
+            <div>
+              <a href="#contact" class="wj-btn">Book a conversation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CONTACT -->
 <div id="contact" class="page-section">
   <div class="container">
@@ -2162,6 +2310,32 @@
     document.addEventListener('mouseup',  onEnd);
     document.addEventListener('touchend', onEnd);
     document.getElementById('contact-form').addEventListener('submit', function(e) { e.preventDefault(); });
+  })();
+
+  // ── Work with Jessica scroll card ──
+  (function () {
+    var container = document.getElementById('wj-container');
+    var card      = document.getElementById('wj-card');
+    var header    = document.getElementById('wj-header');
+    if (!container || !card) return;
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+    function update() {
+      var rect = container.getBoundingClientRect();
+      var t = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0, 1);
+      var mobile = window.innerWidth <= 768;
+      var rotateX = lerp(20, 0, t);
+      var scale   = lerp(mobile ? 0.7 : 1.05, mobile ? 0.9 : 1.0, t);
+      var transY  = lerp(0, -100, t);
+      card.style.transform   = 'rotateX(' + rotateX + 'deg) scale(' + scale + ')';
+      header.style.transform = 'translateY(' + transY + 'px)';
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
   })();
 
   // ── Areas — lerp cursor preview ──
