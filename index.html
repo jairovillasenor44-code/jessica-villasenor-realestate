@@ -2088,6 +2088,20 @@
       statusEl.style.display = 'flex';
     }
 
+    function resetButton() {
+      statusEl.style.display = 'none';
+      statusEl.innerHTML = '';
+      handle.style.transition = 'opacity .3s, transform .45s cubic-bezier(.4,0,.2,1)';
+      handle.style.opacity = '1';
+      fill.style.transition = 'width .45s cubic-bezier(.4,0,.2,1)';
+      fill.style.width = '0';
+      handle.style.transform = 'translateX(0)';
+      currentX = 0;
+      label.style.transition = 'opacity .3s';
+      label.style.opacity = '1';
+      completed = false;
+    }
+
     function onStart(e) {
       if (completed) return;
       dragging = true;
@@ -2131,8 +2145,10 @@
           var ok = data.success === 'true' || data.success === true;
           showStatus(ok ? 'success' : 'error');
           if (ok) form.reset();
+          setTimeout(resetButton, ok ? 2500 : 2000);
         }).catch(function() {
           showStatus('error');
+          setTimeout(resetButton, 2000);
         });
       } else {
         applyX(0, true);
