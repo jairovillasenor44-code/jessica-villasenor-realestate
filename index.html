@@ -2114,11 +2114,14 @@
         label.style.opacity     = '0';
         setTimeout(function () { showStatus('loading'); }, 250);
         var form = document.getElementById('contact-form');
+        var senderName = form.querySelector('[name="name"]').value;
         var payload = {
-          name: form.querySelector('[name="name"]').value,
+          name: senderName,
           email: form.querySelector('[name="email"]').value,
           phone: form.querySelector('[name="phone"]').value,
-          message: form.querySelector('[name="message"]').value
+          message: form.querySelector('[name="message"]').value,
+          _subject: 'New inquiry from ' + (senderName || 'your website'),
+          _replyto: form.querySelector('[name="email"]').value
         };
         fetch('https://formsubmit.co/ajax/jairovillasenor101@gmail.com', {
           method: 'POST',
