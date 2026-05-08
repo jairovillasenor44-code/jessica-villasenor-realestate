@@ -2128,21 +2128,18 @@
         label.style.opacity     = '0';
         setTimeout(function () { showStatus('loading'); }, 250);
         var form = document.getElementById('contact-form');
-        var senderName = form.querySelector('[name="name"]').value;
         var payload = {
-          name: senderName,
+          name: form.querySelector('[name="name"]').value,
           email: form.querySelector('[name="email"]').value,
           phone: form.querySelector('[name="phone"]').value,
-          message: form.querySelector('[name="message"]').value,
-          _subject: 'New inquiry from ' + (senderName || 'your website'),
-          _replyto: form.querySelector('[name="email"]').value
+          message: form.querySelector('[name="message"]').value
         };
-        fetch('https://formsubmit.co/ajax/jairovillasenor101@gmail.com', {
+        fetch('/api/contact', {
           method: 'POST',
           body: JSON.stringify(payload),
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+          headers: { 'Content-Type': 'application/json' }
         }).then(function(res) { return res.json(); }).then(function(data) {
-          var ok = data.success === 'true' || data.success === true;
+          var ok = data.success === true;
           showStatus(ok ? 'success' : 'error');
           if (ok) form.reset();
           setTimeout(resetButton, ok ? 2500 : 2000);
