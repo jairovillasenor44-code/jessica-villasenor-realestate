@@ -1,9 +1,10 @@
 # CLAUDE.md — Jessica Villaseñor Real Estate Site
 
 ## Project
-- **Main file:** `Jessica Villaseñor — Engel & Völkers Reno.html` — single HTML file, all CSS and JS inline.
+- **Main file:** `index.html` — single HTML file, all CSS and JS inline.
 - **FAQ page:** `faq.html` — self-contained, separate stylesheet/JS, no shared file with main.
-- **Server:** `node serve.mjs` → localhost:3000. `/` serves main HTML, `/faq.html` serves FAQ page.
+- **Server:** `node serve.mjs` → localhost:3000. `/` serves `index.html`, `/faq.html` serves FAQ page, `/api/contact` routes to `api/contact.js`.
+- **Deployed:** `jessica-villasenor-realestate.vercel.app` (GitHub → Vercel auto-deploy on push to `main`)
 
 ## Running Node on This Machine
 PowerShell PATH is not auto-loaded. Always prepend before any `node` command:
@@ -25,9 +26,15 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 - `--parchment: #f7f4ef` — defined in `faq.html` only, NOT in main file
 
 ## Contact Form
-- Submits via FormSubmit.co to `villasrealestate27@gmail.com`
-- Uses slide-to-send JS button — not a standard `<form>` submit
-- First submission triggers a one-time activation email — user must click it once
+- Submits via FormSubmit.co AJAX to `villasrealestate27@gmail.com`
+- Activation email was sent to `villasrealestate27@gmail.com` — Jessica must click "Activate Form" once
+- Uses slide-to-send JS button — not a standard `<form>` submit; auto-resets after success/error
+- Subject line: `New inquiry from [name]` · Reply-to set to sender's email
+- `api/contact.js` — Resend-based serverless function exists but is parked until a custom domain is verified with Resend. Resend account: `jairovillasenor44@outlook.com`, key in `.env` + Vercel env vars.
+
+## Local Dev
+- `.env` file in project root holds `RESEND_API_KEY` and `CONTACT_EMAIL` — gitignored, never commit
+- `serve.mjs` auto-loads `.env` on startup
 
 ## Section Order (main page, top → bottom)
 Hero → Intro Strip → About → Process → Search → Listings → Contact → Areas → Testimonials → Footer → Sticky CTA
