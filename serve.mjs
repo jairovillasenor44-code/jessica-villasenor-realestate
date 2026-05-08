@@ -2,9 +2,20 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 const PORT = 3000;
+
+// Load .env into process.env (local dev only)
+try {
+  const env = fs.readFileSync(path.join(__dirname, '.env'), 'utf8');
+  for (const line of env.split('\n')) {
+    const eq = line.indexOf('=');
+    if (eq > 0) process.env[line.slice(0, eq).trim()] = line.slice(eq + 1).trim();
+  }
+} catch {}
 
 const MIME = {
   '.html': 'text/html',
@@ -21,16 +32,38 @@ const MIME = {
   '.woff2':'font/woff2',
 };
 
-http.createServer((req, res) => {
-  let urlPath = req.url.split('?')[0];
-  if (urlPath === '/') urlPath = '/index.html';
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', chunk => { data += chunk; });
+    req.on('end', () => {
+      try { resolve(data ? JSON.parse(data) : {}); }
+      catch { resolve({}); }
+    });
+    req.on('error', reject);
+  });
+}
 
-  const filePath = path.join(__dirname, decodeURIComponent(urlPath));
+const contactHandler = require('./api/contact.js');
+
+http.createServer(async (req, res) => {
+  const urlPath = req.url.split('?')[0];
+
+  if (urlPath === '/api/contact' && req.method === 'POST') {
+    req.body = await readBody(req);
+    res.status = (code) => { res.statusCode = code; return res; };
+    res.json = (obj) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(obj));
+    };
+    return contactHandler(req, res);
+  }
+
+  let filePath = urlPath === '/' ? '/index.html' : urlPath;
+  filePath = path.join(__dirname, decodeURIComponent(filePath));
 
   fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404); res.end('Not found: ' + urlPath); return;
-    }
+    if (err) { res.writeHead(404); res.end('Not found: ' + urlPath); return; }
     const ext = path.extname(filePath).toLowerCase();
     res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
     res.end(data);
