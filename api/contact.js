@@ -107,7 +107,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Jessica Villaseñor <noreply@oldeapavio.resend.app>',
+        from: 'Jessica Villaseñor Website <onboarding@resend.dev>',
         to: process.env.CONTACT_EMAIL || 'jairovillasenor101@gmail.com',
         reply_to: email,
         subject: `New inquiry from ${name} — Jessica Villaseñor Real Estate`,
