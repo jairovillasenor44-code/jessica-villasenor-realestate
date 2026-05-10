@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -330,6 +330,40 @@
     font-size: 1rem; color: var(--muted);
     max-width: 560px; margin-bottom: 56px; line-height: 1.8;
   }
+
+  /* ─── ABOUT TEASER ─── */
+  .about-teaser { background: linear-gradient(160deg, rgba(44,52,38,.04) 0%, transparent 50%); }
+  .about-teaser-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center; }
+  .about-teaser-img { position: relative; }
+  .about-teaser-img::before { content: ''; position: absolute; top: -16px; left: -16px; width: 100%; height: 100%; border: 1px solid var(--green-dk); opacity: .35; pointer-events: none; }
+  .about-teaser-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 20%; display: block; box-shadow: 0 24px 64px -16px rgba(0,0,0,.22); position: relative; z-index: 1; }
+  .about-teaser-img-cap { background: var(--green-dk); color: var(--green-soft); padding: 12px 18px; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; position: relative; z-index: 1; }
+  .about-teaser-text p { font-size: .95rem; color: rgba(0,0,0,.65); line-height: 1.85; margin-bottom: 36px; max-width: 520px; }
+  .accent-line { width: 44px; height: 2px; background: var(--green-dk); margin: 28px 0; }
+  .teaser-link { display: inline-flex; align-items: center; gap: 10px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--green-dk); font-weight: 400; border-bottom: 1px solid var(--green-dk); padding-bottom: 4px; transition: color .2s, border-color .2s; }
+  .teaser-link:hover { color: var(--accent); border-color: var(--accent); }
+  .teaser-link svg { width: 14px; height: 14px; transition: transform .2s; }
+  .teaser-link:hover svg { transform: translate(3px, -3px); }
+
+  /* ─── LISTINGS TEASER ─── */
+  .listings-teaser-cta { margin-top: 40px; text-align: center; }
+  .view-all-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: var(--green-dk); color: #fff; font-family: 'Open Sans', sans-serif; font-size: .72rem; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; transition: background .25s; }
+  .view-all-btn:hover { background: var(--accent); }
+  .view-all-btn svg { width: 14px; height: 14px; }
+
+  /* ─── CONTACT CTA ─── */
+  .contact-cta { background: var(--green-dk); position: relative; overflow: hidden; }
+  .contact-cta::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(177,132,99,.14) 0%, transparent 70%); pointer-events: none; }
+  .contact-cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; position: relative; z-index: 1; }
+  .contact-cta .label { color: rgba(205,218,212,.8); }
+  .contact-cta .label::before { background: rgba(205,218,212,.6); }
+  .contact-cta-heading { font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; font-family: 'Gilda Display', serif; font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
+  .contact-cta-sub { font-size: .92rem; color: rgba(255,255,255,.48); line-height: 1.8; max-width: 460px; }
+  .contact-cta-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 18px; flex-shrink: 0; }
+  .contact-cta-phone { font-family: 'Gilda Display', serif; font-size: 1.9rem; color: #fff; letter-spacing: .02em; transition: color .2s; white-space: nowrap; }
+  .contact-cta-phone:hover { color: var(--accent); }
+  .contact-cta-btn { display: inline-block; padding: 15px 36px; background: var(--accent); color: #fff; font-family: 'Open Sans', sans-serif; font-size: .72rem; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; transition: background .25s; white-space: nowrap; }
+  .contact-cta-btn:hover { background: var(--accent-dk); }
 
   /* ─── ABOUT ─── */
   #about {
@@ -789,6 +823,7 @@
     margin-bottom: 8px;
   }
   .form-row input,
+  .form-row select,
   .form-row textarea {
     padding: 13px 16px;
     background: #F8F5F1; border: 1px solid var(--border);
@@ -797,8 +832,18 @@
     color: var(--ink); border-radius: 0;
     transition: border-color .2s, box-shadow .2s;
   }
+  .form-row select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b18463' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
+  }
+  .form-row select option[value=""] { color: #999; }
   .form-row textarea { min-height: 110px; resize: vertical; }
   .form-row input:focus,
+  .form-row select:focus,
   .form-row textarea:focus {
     outline: none; border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(177,132,99,.1);
@@ -1221,6 +1266,10 @@
 
   /* ─── MOBILE ─── */
   @media (max-width: 900px) {
+    .about-teaser-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-cta-inner { grid-template-columns: 1fr; gap: 32px; }
+    .contact-cta-actions { align-items: flex-start; }
+    .contact-cta-phone { font-size: 1.5rem; }
     .search-layout { grid-template-columns: 1fr; }
     .search-text-col { padding: 64px 24px; justify-content: flex-start; }
     .search-map-col { min-height: 300px; }
@@ -1293,16 +1342,16 @@
 <nav id="site-nav" aria-label="Main navigation">
   <div class="nav-brand">ENGEL<span class="ev-amp">&amp;</span>V&Ouml;LKERS</div>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#listings">Listings</a></li>
+    <li><a href="/listings">Listings</a></li>
     <li><a href="#areas">Areas</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Referrals</a></li>
+    <li><a href="/contact">Referrals</a></li>
   </ul>
   <div class="nav-actions">
     <a href="/faq.html" class="nav-faq">FAQ</a>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <a href="/contact" class="nav-cta">Contact</a>
   </div>
   <button class="nav-hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1311,14 +1360,14 @@
 
 <!-- MOBILE NAV PANEL -->
 <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-  <a href="#about" class="mobile-link">About</a>
+  <a href="/about" class="mobile-link">About</a>
   <a href="#process" class="mobile-link">Process</a>
-  <a href="#listings" class="mobile-link">Listings</a>
+  <a href="/listings" class="mobile-link">Listings</a>
   <a href="#areas" class="mobile-link">Areas</a>
   <a href="#testimonials" class="mobile-link">Testimonials</a>
   <a href="/faq.html" class="mobile-link">FAQ</a>
-  <a href="#contact" class="mobile-link">Referrals</a>
-  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="/contact" class="mobile-link">Referrals</a>
+  <a href="/contact" class="mobile-link">Contact</a>
 </div>
 
 <main>
@@ -1335,8 +1384,8 @@
     <div class="hero-rule"></div>
     <span class="hero-eyebrow">Reno Real Estate Advisor &nbsp;·&nbsp; Engel &amp; Völkers</span>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-outline">Work with Jessica</a>
-      <a href="#listings" class="btn btn-outline">View Listings</a>
+      <a href="/contact" class="btn btn-outline">Work with Jessica</a>
+      <a href="/listings" class="btn btn-outline">View Listings</a>
     </div>
   </div>
 </header>
@@ -1349,40 +1398,23 @@
   <div class="intro-strip-item"><p>Engel &amp; Völkers Reno</p></div>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="page-section">
+<!-- ABOUT TEASER -->
+<div id="about" class="page-section about-teaser">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-img-wrap">
+    <div class="about-teaser-grid">
+      <div class="about-teaser-img fade-up">
         <img src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor Gutierrez">
-        <div class="about-img-caption">Jessica Villaseñor Gutierrez</div>
+        <div class="about-teaser-img-cap">Jessica Villaseñor Gutierrez</div>
       </div>
-      <div class="about-text">
+      <div class="fade-up fade-up-d1">
         <span class="label">About Jessica</span>
         <h2 class="title">A trusted partner through every step.</h2>
         <div class="accent-line"></div>
-        <p>Jessica Villaseñor is a passionate real estate investor and entrepreneur who began her journey in her early twenties by designing homes. What started as a hands-on learning experience quickly grew into a deep-rooted passion for real estate investing.</p>
-        <p>Through dedicated mentorship and years of experience, Jessica built and led a successful out-of-state investment team and mastered the buy-and-hold strategy, focusing on creating long-term wealth and financial freedom through real estate.</p>
-        <p>Today, Jessica's life beautifully blends her roles as a devoted mom to her 12-year-old son and proud dog mom to three pups with her unwavering commitment to real estate. Whether she's analyzing deals, mentoring fellow investors, or guiding clients through the buying and selling process across Northern Nevada, Jessica brings the same investor's eye and personal care to every client she represents.</p>
-        <div class="about-meta">
-          <strong>Languages:</strong> English &amp; Spanish &nbsp;·&nbsp;
-          <strong>License #:</strong> NV S.0202253 &nbsp;·&nbsp;
-          <strong>Brokerage:</strong> Engel &amp; Völkers Reno
-        </div>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="num">Bilingual</div>
-            <div class="lab">English &amp; Spanish</div>
-          </div>
-          <div class="stat">
-            <div class="num">Investor</div>
-            <div class="lab">Buy &amp; Hold Specialist</div>
-          </div>
-          <div class="stat">
-            <div class="num">Local</div>
-            <div class="lab">Northern Nevada</div>
-          </div>
-        </div>
+        <p>Jessica Villaseñor is a bilingual real estate advisor and buy-and-hold specialist with Engel &amp; Völkers Reno, bringing an investor's eye and genuine personal care to every client she represents across Northern Nevada.</p>
+        <a href="/about" class="teaser-link">
+          Meet Jessica
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -1540,18 +1572,18 @@
   </div>
 </div>
 
-<!-- LISTINGS -->
+<!-- LISTINGS PREVIEW -->
 <div id="listings" class="page-section listings-section">
   <div class="container">
     <span class="label">Recent Listings</span>
     <h2 class="title">Representing buyers and sellers across the region.</h2>
-    <p class="lead">A selection of recent closings across Reno, Sparks, and Fernley — representing both buyers and sellers. View the full portfolio on her Engel &amp; Völkers profile.</p>
+    <p class="lead">A selection of recent closings across Reno, Sparks, and Fernley. View all 10 on the full listings page.</p>
 
-    <div class="listings-grid">
+    <div class="listings-grid" style="grid-template-columns:repeat(4,1fr);">
 
-      <article class="listing-card">
+      <article class="listing-card fade-up">
         <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/53a1f69059ecb8a04770bbba3b5a19a3-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Fernley</span>
+          <span class="listing-badge">Sold &middot; Fernley</span>
           <span class="listing-price">$419,900</span>
         </div>
         <div class="listing-body">
@@ -1562,17 +1594,13 @@
             <span class="listing-spec"><strong>2</strong> ba</span>
             <span class="listing-spec"><strong>1,847</strong> sqft</span>
           </div>
-          <div class="listing-meta">
-            <span>Apr 16, 2026</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <div class="listing-meta"><span>Apr 16, 2026</span><span>Represented: <strong>Buyer</strong></span></div>
         </div>
       </article>
 
-      <article class="listing-card">
+      <article class="listing-card fade-up fade-up-d1">
         <div class="listing-img" style="background-image:url('./brand_assets/IMG_7166.jpeg')">
-          <span class="listing-badge">Closed · Sparks</span>
+          <span class="listing-badge">Closed &middot; Sparks</span>
           <span class="listing-price">$565,000</span>
         </div>
         <div class="listing-body">
@@ -1583,17 +1611,13 @@
             <span class="listing-spec"><strong>3</strong> ba</span>
             <span class="listing-spec"><strong>2,306</strong> sqft</span>
           </div>
-          <div class="listing-meta">
-            <span>Apr 14, 2026</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <div class="listing-meta"><span>Apr 14, 2026</span><span>Represented: <strong>Buyer</strong></span></div>
         </div>
       </article>
 
-      <article class="listing-card">
+      <article class="listing-card fade-up fade-up-d2">
         <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/8671ee8e7a5afd938a971fcf2c23000c-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Sparks</span>
+          <span class="listing-badge">Sold &middot; Sparks</span>
           <span class="listing-price">$490,000</span>
         </div>
         <div class="listing-body">
@@ -1604,17 +1628,13 @@
             <span class="listing-spec"><strong>2</strong> ba</span>
             <span class="listing-spec"><strong>2,012</strong> sqft</span>
           </div>
-          <div class="listing-meta">
-            <span>Nov 3, 2025</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <div class="listing-meta"><span>Nov 3, 2025</span><span>Represented: <strong>Buyer</strong></span></div>
         </div>
       </article>
 
-      <article class="listing-card">
+      <article class="listing-card fade-up fade-up-d3">
         <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/1b6847e12b8f3262feb9799d5bd7de02-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Reno</span>
+          <span class="listing-badge">Sold &middot; Reno</span>
           <span class="listing-price">$410,000</span>
         </div>
         <div class="listing-body">
@@ -1625,218 +1645,36 @@
             <span class="listing-spec"><strong>2</strong> ba</span>
             <span class="listing-spec"><strong>1,792</strong> sqft</span>
           </div>
-          <div class="listing-meta">
-            <span>Oct 30, 2025</span>
-            <span>Represented: <strong>Seller</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/bda97b6e60a5bd3ff8e6d05469b9c3fa-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Sparks</span>
-          <span class="listing-price">$599,900</span>
-        </div>
-        <div class="listing-body">
-          <h4>6554 S Largo Dr</h4>
-          <div class="listing-addr">Sparks, NV 89436</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>4</strong> bd</span>
-            <span class="listing-spec"><strong>3</strong> ba</span>
-            <span class="listing-spec"><strong>2,558</strong> sqft</span>
-          </div>
-          <div class="listing-meta">
-            <span>Oct 3, 2025</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/cde95a1ab73b5c8042bc40c2e815efeb-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Reno</span>
-          <span class="listing-price">$590,000</span>
-        </div>
-        <div class="listing-body">
-          <h4>335 Manciano Way</h4>
-          <div class="listing-addr">Reno, NV 89521</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>4</strong> bd</span>
-            <span class="listing-spec"><strong>3</strong> ba</span>
-            <span class="listing-spec"><strong>2,398</strong> sqft</span>
-          </div>
-          <div class="listing-meta">
-            <span>Jul 17, 2025</span>
-            <span>Represented: <strong>Buyer &amp; Seller</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/9492094efa14308ed035872f2d5b9dc6-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Sparks</span>
-          <span class="listing-price">$429,500</span>
-        </div>
-        <div class="listing-body">
-          <h4>935 Peach Blossom Way</h4>
-          <div class="listing-addr">Sparks, NV 89436</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>3</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>1,968</strong> sqft</span>
-          </div>
-          <div class="listing-meta">
-            <span>May 1, 2025</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/73bada874e3ccc89d5251519f28a9d38-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Reno</span>
-          <span class="listing-price">$465,000</span>
-        </div>
-        <div class="listing-body">
-          <h4>9920 Rising Sun Ct</h4>
-          <div class="listing-addr">Reno, NV 89506</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>4</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>2,104</strong> sqft</span>
-          </div>
-          <div class="listing-meta">
-            <span>Feb 6, 2025</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/11252ecc256ea0da616c9cc478fec2ce-cc_ft_768.webp')">
-          <span class="listing-badge">Sold · Reno</span>
-          <span class="listing-price">$407,150</span>
-        </div>
-        <div class="listing-body">
-          <h4>18009 Northridge Ave</h4>
-          <div class="listing-addr">Reno, NV 89508</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>3</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>1,712</strong> sqft</span>
-          </div>
-          <div class="listing-meta">
-            <span>Jan 31, 2025</span>
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-        </div>
-      </article>
-
-      <article class="listing-card">
-        <div class="listing-img" style="background-image:url('./brand_assets/IMG_7075.jpeg')">
-          <span class="listing-badge">Closed · Fernley</span>
-          <span class="listing-price">$467,756</span>
-        </div>
-        <div class="listing-body">
-          <h4>3446 Patten Way</h4>
-          <div class="listing-addr">Fernley, NV</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>4</strong> bd</span>
-            <span class="listing-spec"><strong>2.5</strong> ba</span>
-            <span class="listing-spec"><strong>2,034</strong> sqft</span>
-            <span class="listing-spec"><strong>2</strong>-car garage</span>
-          </div>
-          <div class="listing-meta">
-            <span>Represented: <strong>Buyer</strong></span>
-          </div>
-          <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener" class="listing-view-link">View Profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <div class="listing-meta"><span>Oct 30, 2025</span><span>Represented: <strong>Seller</strong></span></div>
         </div>
       </article>
 
     </div>
+
+    <div class="listings-teaser-cta">
+      <a href="/listings" class="view-all-btn">
+        View All 10 Listings
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
   </div>
 </div>
-
-<!-- CONTACT -->
-<div id="contact" class="page-section">
+<!-- CONTACT CTA -->
+<div id="contact" class="page-section contact-cta">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-badge">
-          <div class="contact-badge-dot"></div>
-          <span class="contact-badge-text">Currently accepting new clients</span>
-        </div>
+    <div class="contact-cta-inner">
+      <div>
         <span class="label">Get in Touch</span>
-        <h2 class="title">Let's start the conversation.</h2>
-        <p>Whether you're buying, selling, or just wondering what your home is worth, Jessica is happy to talk — no pressure, no obligation.</p>
-
-        <div class="contact-line">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.48 2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.04 6.04l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="c-text">
-            <span class="c-lbl">Phone</span>
-            <span class="c-val"><a href="tel:+17758136992">(775) 813-6992</a></span>
-          </div>
-        </div>
-        <div class="contact-line">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="c-text">
-            <span class="c-lbl">Email</span>
-            <span class="c-val"><a href="mailto:jessica.villasenor@evrealestate.com">jessica.villasenor@evrealestate.com</a></span>
-          </div>
-        </div>
-        <div class="contact-line">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="c-text">
-            <span class="c-lbl">Office</span>
-            <span class="c-val">15425 Wedge Parkway, Suite 105<br>Reno, NV 89511</span>
-          </div>
-        </div>
+        <div class="contact-cta-heading">Let's start the conversation.</div>
+        <p class="contact-cta-sub">Whether you're buying, selling, or just wondering what your home is worth, Jessica is happy to talk &mdash; no pressure, no obligation.</p>
       </div>
-
-      <form class="contact-form" id="contact-form">
-        <h3>Send a message</h3>
-        <p class="contact-form-sub">Reach out directly — Jessica personally responds to every inquiry.</p>
-        <div class="form-row">
-          <label for="contact-name">Your Name</label>
-          <input id="contact-name" name="name" type="text" required>
-        </div>
-        <div class="form-row">
-          <label for="contact-email">Email</label>
-          <input id="contact-email" name="email" type="email" required>
-        </div>
-        <div class="form-row">
-          <label for="contact-phone">Phone (optional)</label>
-          <input id="contact-phone" name="phone" type="tel">
-        </div>
-        <div class="form-row">
-          <label for="contact-message">How can Jessica help?</label>
-          <textarea id="contact-message" name="message" required></textarea>
-        </div>
-        <div class="slide-btn-wrap" id="slide-btn-wrap">
-          <div class="slide-btn-fill" id="slide-btn-fill"></div>
-          <div class="slide-btn-handle" id="slide-btn-handle">
-            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </div>
-          <div class="slide-btn-track-label">Slide to send</div>
-          <div class="slide-btn-status" id="slide-btn-status"></div>
-        </div>
-      </form>
+      <div class="contact-cta-actions">
+        <a href="tel:+17758136992" class="contact-cta-phone">(775) 813-6992</a>
+        <a href="/contact" class="contact-cta-btn">Send a Message</a>
+      </div>
     </div>
   </div>
 </div>
-
 <!-- AREAS -->
 <div id="areas" class="page-section">
   <div class="container areas-section">
@@ -2025,7 +1863,7 @@
   <span class="sticky-cta-text">Ready to find your next home?</span>
   <div class="sticky-cta-divider"></div>
   <a href="tel:+17758136992" class="sticky-cta-phone">(775) 813-6992</a>
-  <a href="#contact" class="sticky-cta-btn">Book a Call</a>
+  <a href="/contact" class="sticky-cta-btn">Book a Call</a>
   <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Dismiss">×</button>
 </div>
 
@@ -2047,7 +1885,7 @@
   // ── Nav scroll shadow ──
   const nav = document.getElementById('site-nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
+    nav.classList.toggle('scrolled', window.scrollY > 120);
   }, { passive: true });
 
   // ── Mobile hamburger ──
@@ -2137,6 +1975,8 @@
       dragging = false;
       var progress = currentX / getMax();
       if (progress >= THRESHOLD) {
+        var form = document.getElementById('contact-form');
+        if (!form.checkValidity()) { applyX(0, true); form.reportValidity(); return; }
         completed = true;
         handle.style.transition = 'opacity .25s';
         handle.style.opacity    = '0';
@@ -2144,22 +1984,20 @@
         fill.style.width        = '100%';
         label.style.opacity     = '0';
         setTimeout(function () { showStatus('loading'); }, 250);
-        var form = document.getElementById('contact-form');
         var senderName = form.querySelector('[name="name"]').value;
         var payload = {
           name: senderName,
           email: form.querySelector('[name="email"]').value,
           phone: form.querySelector('[name="phone"]').value,
-          message: form.querySelector('[name="message"]').value,
-          _subject: 'New inquiry from ' + (senderName || 'your website'),
-          _replyto: form.querySelector('[name="email"]').value
+          interest: form.querySelector('[name="interest"]').value,
+          message: form.querySelector('[name="message"]').value
         };
-        fetch('https://formsubmit.co/ajax/villasrealestate27@gmail.com', {
+        fetch('/api/contact', {
           method: 'POST',
           body: JSON.stringify(payload),
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+          headers: { 'Content-Type': 'application/json' }
         }).then(function(res) { return res.json(); }).then(function(data) {
-          var ok = data.success === 'true' || data.success === true;
+          var ok = data.success === true;
           showStatus(ok ? 'success' : 'error');
           if (ok) form.reset();
           setTimeout(resetButton, ok ? 2500 : 2000);
