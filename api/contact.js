@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, email, phone, message } = req.body || {};
+  const { name, email, phone, interest, message } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, error: 'Missing required fields' });
@@ -51,6 +51,10 @@ module.exports = async (req, res) => {
             ${phone ? `<!-- Phone -->
             <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#b18463;">Phone</p>
             <p style="margin:0 0 28px;font-size:16px;color:#1a1a1a;">${safeText(phone)}</p>` : ''}
+
+            ${interest ? `<!-- Interest -->
+            <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#b18463;">Looking to</p>
+            <p style="margin:0 0 28px;font-size:16px;color:#1a1a1a;">${safeText(interest)}</p>` : ''}
 
             <!-- Divider -->
             <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
@@ -103,7 +107,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Jessica Villaseñor Website <onboarding@resend.dev>',
+        from: 'Jessica Villaseñor <noreply@oldeapavio.resend.app>',
         to: process.env.CONTACT_EMAIL || 'jairovillasenor101@gmail.com',
         reply_to: email,
         subject: `New inquiry from ${name} — Jessica Villaseñor Real Estate`,
