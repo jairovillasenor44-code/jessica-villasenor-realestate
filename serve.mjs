@@ -62,9 +62,24 @@ http.createServer(async (req, res) => {
   let filePath = urlPath === '/' ? '/index.html' : urlPath;
   filePath = path.join(__dirname, decodeURIComponent(filePath));
 
-  fs.readFile(filePath, (err, data) => {
+  function tryServe(fp, cb) {
+    fs.readFile(fp, (err, data) => {
+      if (!err) return cb(null, fp, data);
+      // cleanUrls: try appending .html
+      if (!path.extname(fp)) {
+        fs.readFile(fp + '.html', (err2, data2) => {
+          if (!err2) return cb(null, fp + '.html', data2);
+          cb(err);
+        });
+      } else {
+        cb(err);
+      }
+    });
+  }
+
+  tryServe(filePath, (err, resolvedPath, data) => {
     if (err) { res.writeHead(404); res.end('Not found: ' + urlPath); return; }
-    const ext = path.extname(filePath).toLowerCase();
+    const ext = path.extname(resolvedPath).toLowerCase();
     res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
     res.end(data);
   });

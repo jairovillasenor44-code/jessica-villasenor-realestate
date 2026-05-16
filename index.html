@@ -434,235 +434,119 @@
     text-transform: uppercase; color: var(--muted);
   }
 
-  /* ─── SEARCH HOME ─── */
-  .search-section {
-    background: var(--ink);
-    overflow: hidden;
-  }
-  .search-layout {
+  /* ─── HOME VALUATION ─── */
+  .valuation-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 560px;
-  }
-  .search-text-col {
-    display: flex; align-items: center; justify-content: flex-end;
-    padding: 80px 64px 80px 60px;
-    position: relative; z-index: 1;
-  }
-  .search-text-col::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 100% at 0% 60%, rgba(44,52,38,.5) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .search-text-inner {
-    max-width: 480px; position: relative; z-index: 1;
-  }
-  .search-section .label { color: rgba(205,218,212,.8); }
-  .search-section .label::before { background: rgba(205,218,212,.6); }
-  .search-text-inner .title { color: #fff; font-size: clamp(2rem, 3vw, 3rem); }
-  .search-text-inner .lead {
-    color: rgba(255,255,255,.52);
-    max-width: 400px; margin-bottom: 40px;
-  }
-  .search-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 16px 36px;
-    background: var(--accent); color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: .72rem; font-weight: 400;
-    letter-spacing: .18em; text-transform: uppercase;
-    transition: background .25s, transform .18s;
-  }
-  .search-cta:hover { background: var(--accent-dk); }
-  .search-cta:active { transform: scale(.97); }
-  .search-cta:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
-  .search-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
-  .search-map-col {
-    position: relative;
-    overflow: hidden;
-    min-height: 560px;
-  }
-  .search-map-col iframe {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    border: none; filter: grayscale(.35) contrast(1.08) brightness(.92);
-  }
-  .search-map-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to right, rgba(26,26,26,.22) 0%, transparent 35%);
-    pointer-events: none; z-index: 1;
-  }
-  .search-map-badge {
-    position: absolute; bottom: 24px; right: 24px; z-index: 2;
-    background: rgba(26,26,26,.82);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    padding: 12px 18px;
-    color: rgba(255,255,255,.7);
-    font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  }
-
-  /* ─── LISTINGS ─── */
-  .listings-section { background: var(--light); }
-  .listings-grid {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 16px; margin-top: 48px;
-  }
-  .listing-card {
-    background: #E8E4DC; overflow: hidden;
-    transition: box-shadow .35s cubic-bezier(.4,0,.2,1),
-                transform .35s cubic-bezier(.4,0,.2,1);
-  }
-  .listing-card:hover {
-    box-shadow:
-      0 40px 80px -20px rgba(177,132,99,.22),
-      0 12px 32px -8px rgba(0,0,0,.14);
-    transform: translateY(-6px);
-  }
-  .listing-img {
-    aspect-ratio: 4/3;
-    background: var(--mid);
-    background-size: cover; background-position: center;
-    position: relative;
-    overflow: hidden;
-    cursor: zoom-in;
-  }
-  .listing-img::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 55%);
-  }
-  .listing-badge {
-    position: absolute; top: 16px; left: 16px; z-index: 2;
-    background: var(--green-dk); color: var(--green-soft);
-    font-size: .6rem; letter-spacing: .22em;
-    text-transform: uppercase; padding: 6px 12px;
-  }
-  .listing-price {
-    position: absolute; bottom: 12px; right: 12px; z-index: 2;
-    color: #fff;
-    font-family: 'Gilda Display', serif;
-    font-size: 1.1rem;
-    text-shadow: 0 1px 6px rgba(0,0,0,.5);
-  }
-  .listing-body { padding: 16px 18px 18px; }
-  .listing-body h4 {
-    font-size: 1rem; color: var(--ink); margin-bottom: 4px;
-  }
-  .listing-addr {
-    font-size: .75rem; color: var(--muted); margin-bottom: 12px;
-  }
-  .listing-meta {
-    display: flex; flex-wrap: wrap; gap: 10px 16px;
-    font-size: .74rem; color: var(--ink);
-    border-top: 1px solid var(--border); padding-top: 10px;
-  }
-  .listing-meta strong { font-weight: 600; }
-
-  /* ─── AREAS ─── */
-  .areas-section { text-align: center; }
-  .areas-section .label { justify-content: center; }
-  .areas-section .label::before { display: none; }
-  .areas-section .lead { margin-left: auto; margin-right: auto; }
-
-  /* List rows */
-  .areas-list { margin-top: 48px; border-top: 1px solid var(--border); text-align: left; }
-  .area-row {
-    display: block;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .area-row-bg {
-    position: absolute;
-    inset: 0 -60px;
-    background: var(--accent-light);
+    grid-template-columns: 55fr 45fr;
+    gap: 0;
+    margin-top: 64px;
+    border: 1px solid var(--border);
     border-radius: 4px;
-    opacity: 0;
-    transform: scaleY(0.9);
-    transition: opacity .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1);
-    pointer-events: none;
+    overflow: hidden;
   }
-  .area-row:hover .area-row-bg { opacity: 1; transform: scaleY(1); }
-  .area-row-inner {
-    position: relative; z-index: 1;
-    display: flex; align-items: center;
-    justify-content: space-between; gap: 16px;
+  .valuation-left { padding: 52px 56px; background: var(--bg); }
+  .valuation-right {
+    background: var(--green-dk);
+    padding: 52px 48px;
+    position: relative; overflow: hidden;
   }
-  .area-row-left { flex: 1; }
-  .area-row-title {
-    font-family: 'Gilda Display', serif;
-    font-size: clamp(1.9rem, 3vw, 2.8rem);
-    color: var(--ink);
-    display: inline-block; position: relative;
-    line-height: 1.1;
-  }
-  .area-row-title::after {
+  .valuation-right::before {
     content: '';
-    position: absolute; left: 0; bottom: -2px;
-    height: 1px; width: 0;
-    background: var(--ink);
-    transition: width .35s cubic-bezier(.4,0,.2,1);
-  }
-  .area-row:hover .area-row-title::after { width: 100%; }
-  .area-row-sub {
-    font-size: .68rem; letter-spacing: .2em;
-    text-transform: uppercase; color: var(--muted);
-    margin-top: 6px;
-    transition: color .3s;
-  }
-  .area-row:hover .area-row-sub { color: var(--green-dk); }
-  .area-row-arrow {
-    width: 22px; height: 22px; flex-shrink: 0;
-    color: var(--green-dk);
-    opacity: 0;
-    transform: translate(-8px, 8px);
-    transition: opacity .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1);
-  }
-  .area-row:hover .area-row-arrow { opacity: 1; transform: translate(0, 0); }
-  .area-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-  .area-row-thumb {
-    display: none;
-    width: 72px; height: 48px;
-    object-fit: cover; border-radius: 6px;
-    flex-shrink: 0;
-    opacity: 0.88;
-  }
-
-  /* Floating cursor preview */
-  .area-preview-wrap {
-    position: fixed; top: 0; left: 0;
-    z-index: 9999; pointer-events: none;
-  }
-  .area-preview {
-    width: 300px; height: 192px;
-    border-radius: 10px; overflow: hidden;
-    box-shadow: 0 28px 64px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.18);
-    opacity: 0;
-    transform: scale(0.84);
-    transition: opacity .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1);
-    position: relative;
-  }
-  .area-preview.visible { opacity: 1; transform: scale(1); }
-  .area-preview-img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transform: scale(1.1);
-    filter: blur(8px);
-    transition: opacity .45s ease-out, transform .45s ease-out, filter .45s ease-out;
-  }
-  .area-preview-img.active { opacity: 1; transform: scale(1); filter: none; }
-  .area-preview-gloss {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.18), transparent 60%);
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(177,132,99,.12) 0%, transparent 70%);
     pointer-events: none;
   }
+  .valuation-trust { margin: 28px 0 36px; display: flex; flex-direction: column; gap: 12px; }
+  .valuation-trust-item { display: flex; align-items: center; gap: 10px; font-size: .83rem; color: var(--muted); }
+  .valuation-trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .val-form-label { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 6px; display: block; }
+  .val-form-header { font-family: 'Gilda Display', serif; font-size: 1.45rem; color: #fff; margin-bottom: 28px; }
+  .val-form-field { margin-bottom: 14px; }
+  .val-form-field input {
+    width: 100%; padding: 12px 15px;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+    font-family: 'Open Sans', sans-serif; font-size: .88rem; font-weight: 300;
+    color: #fff; border-radius: 0;
+    transition: border-color .2s;
+  }
+  .val-form-field input::placeholder { color: rgba(255,255,255,.32); }
+  .val-form-field input:focus { outline: none; border-color: var(--accent); }
+  .val-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .val-form-submit {
+    width: 100%; margin-top: 6px;
+    padding: 14px 0;
+    background: var(--accent); color: #fff;
+    font-family: 'Open Sans', sans-serif; font-size: .68rem; font-weight: 400;
+    letter-spacing: .2em; text-transform: uppercase;
+    border: none; cursor: pointer;
+    transition: background .22s;
+  }
+  .val-form-submit:hover { background: var(--accent-dk); }
+  .val-form-submit:disabled { opacity: .6; cursor: default; }
+  .val-form-note { font-size: .72rem; color: rgba(255,255,255,.28); margin-top: 10px; text-align: center; }
+  .val-form-success, .val-form-error { display: none; text-align: center; padding: 20px; }
+  .val-form-success p { color: rgba(255,255,255,.7); font-size: .88rem; }
+  .val-form-error p { color: #e87c7c; font-size: .85rem; margin-top: 8px; }
+
+  /* Why-it-matters strip */
+  .valuation-why { background: var(--light); }
+  .valuation-why-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+  .valuation-why-card { padding: 40px 36px; border-right: 1px solid var(--border); border-top: 3px solid var(--accent); }
+  .valuation-why-card:last-child { border-right: none; }
+  .valuation-why-title { font-family: 'Gilda Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; }
+  .valuation-why-body { font-size: .83rem; color: var(--muted); line-height: 1.8; }
+
+  /* Valuation FAQ accordion */
+  .val-accordion-section { background: var(--bg); }
+  .val-accordion { border-top: 1px solid var(--border); text-align: left; margin-top: 40px; }
+  .val-acc-item { border-bottom: 1px solid var(--border); }
+  .val-acc-trigger {
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 26px 4px; background: none; border: none; cursor: pointer;
+    text-align: left; gap: 24px;
+  }
+  .val-acc-q { font-family: 'Gilda Display', serif; font-size: 1.05rem; color: var(--ink); }
+  .val-acc-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform .3s; }
+  .val-acc-item.open .val-acc-icon { transform: rotate(45deg); }
+  .val-acc-body { overflow: hidden; max-height: 0; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+  .val-acc-item.open .val-acc-body { max-height: 400px; }
+  .val-acc-body-inner { padding: 0 4px 28px; max-width: 820px; }
+  .val-acc-body-inner p { font-size: .88rem; color: var(--muted); line-height: 1.85; }
+
+  /* CMA vs Appraisal methods */
+  .val-methods { background: var(--light); }
+  .val-methods-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); }
+  .val-method-card { padding: 56px 60px; background: var(--light); }
+  .val-method-eyebrow { font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .val-method-title { font-family: 'Gilda Display', serif; font-size: 1.6rem; color: var(--ink); margin-bottom: 18px; }
+  .val-method-body { font-size: .85rem; color: var(--muted); line-height: 1.85; }
+  .val-method-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; list-style: none; }
+  .val-method-list li { font-size: .83rem; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.65; }
+  .val-method-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+  /* Agent trust panel */
+  .val-agent-section { background: var(--green-dk); }
+  .val-agent {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 52px; align-items: center; padding: 80px 0;
+    position: relative; overflow: hidden;
+  }
+  .val-agent::before {
+    content: 'JV';
+    position: absolute; right: -20px; bottom: -60px;
+    font-family: 'Gilda Display', serif; font-size: 18rem; line-height: 1;
+    color: rgba(255,255,255,.025); pointer-events: none; user-select: none;
+  }
+  .val-agent-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); flex-shrink: 0; }
+  .val-agent-name { font-family: 'Gilda Display', serif; font-size: 1.7rem; color: #fff; margin-bottom: 6px; }
+  .val-agent-title { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .val-agent-bio { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.85; margin-bottom: 24px; max-width: 580px; }
+  .val-agent-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+  .val-agent-badge { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(177,132,99,.3); padding: 7px 14px; }
+  .val-agent-cta { display: inline-block; padding: 14px 36px; background: var(--accent); color: #fff; font-family: 'Open Sans', sans-serif; font-size: .68rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; transition: background .22s; }
+  .val-agent-cta:hover { background: var(--accent-dk); }
 
   /* ─── TESTIMONIALS ─── */
   .testimonials-section {
@@ -968,124 +852,6 @@
   }
 
 
-  /* ─── PROCESS SECTION ─── */
-  .process-section {
-    background: var(--bg);
-    border-top: 3px solid var(--green-dk);
-  }
-  .ps-perspective { perspective: 1200px; }
-  .ps-card {
-    will-change: transform;
-    transform-origin: center top;
-    border-radius: 20px;
-    border: 1px solid rgba(44,52,38,.13);
-    background: rgba(255,255,255,.10);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 8px 40px rgba(0,0,0,.07);
-    padding: 40px 48px;
-    margin-top: 40px;
-  }
-  .process-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 72px; margin-top: 0;
-  }
-  .process-col-head {
-    padding-bottom: 24px; margin-bottom: 8px;
-    border-bottom: 1px solid rgba(44,52,38,.18);
-  }
-  .process-col-head span {
-    display: block; font-family: 'Open Sans', sans-serif;
-    font-size: .62rem; font-weight: 400;
-    letter-spacing: .22em; text-transform: uppercase;
-    color: var(--green-dk); margin-bottom: 8px;
-  }
-  .process-col-head h3 {
-    font-size: 1.65rem; color: var(--ink);
-  }
-  .process-step {
-    display: flex; gap: 22px; padding: 22px 0 22px 22px;
-    border-bottom: 1px solid var(--border);
-    border-left: 2px solid rgba(44,52,38,.12);
-  }
-  .process-step:last-child { border-bottom: none; }
-  .step-num {
-    font-family: 'Gilda Display', serif;
-    font-size: 1.6rem; color: var(--green-dk);
-    line-height: 1; flex-shrink: 0;
-    width: 32px; opacity: .6;
-  }
-  .step-body h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: .78rem; font-weight: 600;
-    letter-spacing: .08em; text-transform: uppercase;
-    color: var(--ink); margin-bottom: 7px;
-  }
-  .step-body p {
-    font-size: .88rem; color: var(--muted); line-height: 1.75;
-  }
-
-  /* ─── MARKET SNAPSHOT ─── */
-  .market-section {
-    background: var(--green-dk);
-    position: relative; overflow: hidden;
-  }
-  .market-section::before {
-    content: '';
-    position: absolute; bottom: -120px; left: -120px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(177,132,99,.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .market-header {
-    display: flex; align-items: flex-end;
-    justify-content: space-between; gap: 32px;
-    margin-bottom: 48px;
-  }
-  .market-header .label { color: rgba(177,132,99,.7); }
-  .market-header .label::before { background: rgba(177,132,99,.5); }
-  .market-header .title { color: #fff; margin-bottom: 0; }
-  .market-updated {
-    font-size: .65rem; letter-spacing: .18em;
-    text-transform: uppercase; color: rgba(255,255,255,.28);
-    white-space: nowrap; padding-bottom: 6px;
-  }
-  .market-grid {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    gap: 1px; background: rgba(255,255,255,.07);
-  }
-  .market-card {
-    background: var(--green-dk);
-    padding: 40px 36px;
-    transition: background .28s;
-  }
-  .market-card:hover { background: rgba(255,255,255,.04); }
-  .market-card::before {
-    content: '';
-    display: block; width: 28px; height: 2px;
-    background: var(--accent); margin-bottom: 20px; opacity: .65;
-  }
-  .market-num {
-    font-family: 'Gilda Display', serif;
-    font-size: 3.2rem; color: #fff;
-    line-height: 1; margin-bottom: 8px;
-  }
-  .market-unit {
-    font-size: .65rem; color: var(--accent);
-    letter-spacing: .14em; text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .market-label {
-    font-size: .72rem; color: rgba(255,255,255,.48);
-    letter-spacing: .14em; text-transform: uppercase;
-  }
-  .market-trend {
-    margin-top: 16px;
-    font-size: .7rem; color: rgba(255,255,255,.28);
-  }
-  .market-trend span.up { color: #7ecb8a; }
-  .market-trend span.dn { color: #e87c7c; }
-
   /* ─── TESTIMONIALS CAROUSEL ─── */
   .testimonials-track-wrap {
     margin-top: 56px;
@@ -1180,26 +946,6 @@
   .carousel-dot.active { background: var(--accent); transform: scale(1.4); }
   .carousel-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-  /* ─── LISTING CARD IMPROVEMENTS ─── */
-  .listing-specs {
-    display: flex; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 10px;
-    padding-bottom: 10px; border-bottom: 1px solid var(--border);
-  }
-  .listing-spec {
-    font-size: .75rem; color: var(--muted);
-    display: flex; align-items: center; gap: 5px;
-  }
-  .listing-spec strong { color: var(--ink); font-weight: 600; }
-  .listing-view-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: .65rem; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--accent); margin-top: 10px;
-    opacity: 0; transform: translateX(-8px);
-    transition: opacity .25s cubic-bezier(.4,0,.2,1),
-                transform .25s cubic-bezier(.4,0,.2,1);
-  }
-  .listing-view-link svg { width: 11px; height: 11px; }
-  .listing-card:hover .listing-view-link { opacity: 1; transform: translateX(0); }
 
   /* ─── STICKY CTA BAR ─── */
   .sticky-cta {
@@ -1270,9 +1016,6 @@
     .contact-cta-inner { grid-template-columns: 1fr; gap: 32px; }
     .contact-cta-actions { align-items: flex-start; }
     .contact-cta-phone { font-size: 1.5rem; }
-    .search-layout { grid-template-columns: 1fr; }
-    .search-text-col { padding: 64px 24px; justify-content: flex-start; }
-    .search-map-col { min-height: 300px; }
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .nav-actions { display: none; }
@@ -1287,21 +1030,25 @@
     .about-grid,
     .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     .about-img-wrap::before { display: none; }
-    .listings-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
-    .area-row-bg { inset: 0 -24px; }
-    .area-preview-wrap { display: none; }
     .stat-row { grid-template-columns: 1fr 1fr; }
     .contact-form { padding: 32px 24px; }
     footer { padding: 60px 24px 40px; }
-.process-grid { grid-template-columns: 1fr; gap: 48px; }
-    .market-grid { grid-template-columns: 1fr; gap: 1px; }
-    .market-header { flex-direction: column; align-items: flex-start; gap: 8px; }
     .testimonial-card { grid-template-columns: 1fr; gap: 0; padding: 32px 24px; }
     .t-aside { display: none; }
     .sticky-cta { padding: 12px 16px 12px 20px; gap: 14px; }
     .sticky-cta-text { display: none; }
     .sticky-cta-divider { display: none; }
-    .area-row-thumb { display: block; }
+    .valuation-split { grid-template-columns: 1fr; }
+    .valuation-why-grid { grid-template-columns: 1fr 1fr; }
+    .val-methods-inner { grid-template-columns: 1fr; }
+    .val-method-card { padding: 40px 32px; }
+    .val-agent { grid-template-columns: 1fr; gap: 32px; }
+    .val-agent::before { display: none; }
+    .valuation-left { padding: 40px 28px; }
+    .valuation-right { padding: 40px 28px; }
+  }
+  @media (max-width: 600px) {
+    .valuation-why-grid { grid-template-columns: 1fr; }
   }
 
   /* ── Lightbox ── */
@@ -1343,9 +1090,9 @@
   <div class="nav-brand">ENGEL<span class="ev-amp">&amp;</span>V&Ouml;LKERS</div>
   <ul class="nav-links">
     <li><a href="/about">About</a></li>
-    <li><a href="#process">Process</a></li>
     <li><a href="/listings">Listings</a></li>
-    <li><a href="#areas">Areas</a></li>
+    <li><a href="/#home-valuation">Valuation</a></li>
+    <li><a href="/home-search">Home Search</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="/contact">Referrals</a></li>
   </ul>
@@ -1361,9 +1108,9 @@
 <!-- MOBILE NAV PANEL -->
 <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="/about" class="mobile-link">About</a>
-  <a href="#process" class="mobile-link">Process</a>
   <a href="/listings" class="mobile-link">Listings</a>
-  <a href="#areas" class="mobile-link">Areas</a>
+  <a href="/#home-valuation" class="mobile-link">Valuation</a>
+  <a href="/home-search" class="mobile-link">Home Search</a>
   <a href="#testimonials" class="mobile-link">Testimonials</a>
   <a href="/faq.html" class="mobile-link">FAQ</a>
   <a href="/contact" class="mobile-link">Referrals</a>
@@ -1420,245 +1167,7 @@
   </div>
 </div>
 
-<!-- PROCESS -->
-<div id="process" class="page-section process-section">
-  <div class="container">
-    <span class="label">How It Works</span>
-    <h2 class="title">Your journey, simplified.</h2>
-    <p class="lead">Whether you're buying your first home or ready to sell, Jessica guides you through every step with clarity and care.</p>
 
-    <div class="ps-perspective">
-    <div class="ps-card" id="ps-card">
-    <div class="process-grid">
-
-      <div class="process-col fade-up">
-        <div class="process-col-head">
-          <span>For Buyers</span>
-          <h3>Buying with Jessica</h3>
-        </div>
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <h4>Consultation &amp; Pre-Approval</h4>
-            <p>We start with a conversation about your goals, timeline, and budget. Jessica connects you with trusted lenders to get pre-approved before you start touring.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <h4>Home Search &amp; Touring</h4>
-            <p>Jessica curates listings that match your criteria and attends every showing — bringing an investor's eye to evaluate each property's true value.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <h4>Offer &amp; Negotiation</h4>
-            <p>When you find the one, Jessica crafts a competitive offer backed by market data and negotiates every detail to protect your interests.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <h4>Inspection to Close</h4>
-            <p>From inspection to the closing table, Jessica coordinates every detail so you can focus on what matters — your new home.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="process-col fade-up fade-up-d2">
-        <div class="process-col-head">
-          <span>For Sellers</span>
-          <h3>Selling with Jessica</h3>
-        </div>
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <h4>Home Valuation &amp; Strategy</h4>
-            <p>Jessica delivers a detailed comparative market analysis and tailored pricing strategy to maximize your sale price in today's market.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <h4>Prepare &amp; Stage</h4>
-            <p>She advises on staging, targeted improvements, and professional photography to make your home stand out on every platform.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <h4>Listing &amp; Marketing</h4>
-            <p>Your home is launched on MLS, the Engel &amp; Völkers global network, social media, and targeted digital campaigns reaching qualified buyers fast.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <h4>Negotiate &amp; Close</h4>
-            <p>Jessica reviews every offer, negotiates the strongest terms, and manages the full closing process — stress-free, from contract to keys.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div><!-- /ps-card -->
-    </div><!-- /ps-perspective -->
-  </div>
-</div>
-
-<!-- MARKET SNAPSHOT — hidden, restore by uncommenting the block below
-<div id="market" class="page-section market-section">
-  <div class="container">
-    <div class="market-header">
-      <div>
-        <span class="label">Local Intelligence</span>
-        <h2 class="title">Current Reno Market</h2>
-      </div>
-      <div class="market-updated">Updated May 2026</div>
-    </div>
-    <div class="market-grid">
-      <div class="market-card fade-up">
-        <div class="market-num">28</div>
-        <div class="market-unit">Days</div>
-        <div class="market-label">Avg. Days on Market</div>
-        <div class="market-trend"><span class="dn">↓ 4 days</span> vs. last quarter</div>
-      </div>
-      <div class="market-card fade-up fade-up-d1">
-        <div class="market-num">$492K</div>
-        <div class="market-unit">Median</div>
-        <div class="market-label">Median Sale Price</div>
-        <div class="market-trend"><span class="up">↑ 3.2%</span> year over year</div>
-      </div>
-      <div class="market-card fade-up fade-up-d2">
-        <div class="market-num">98.4<span style="font-size:1.8rem">%</span></div>
-        <div class="market-unit">Ratio</div>
-        <div class="market-label">List-to-Sale Price Ratio</div>
-        <div class="market-trend"><span class="up">Strong</span> seller conditions</div>
-      </div>
-    </div>
-  </div>
-</div>
--->
-
-<!-- SEARCH HOME -->
-<div id="search" class="search-section">
-  <div class="search-layout">
-
-    <div class="search-text-col">
-      <div class="search-text-inner">
-        <span class="label">Home Search</span>
-        <h2 class="title">Find your next home in Northern Nevada.</h2>
-        <p class="lead">Browse active listings across Reno, Sparks, Fernley, and beyond — powered by Engel &amp; Völkers.</p>
-        <a href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A39.39642625520731%2C%22lng%22%3A-119.73919345484921%7D&boundary=%5B%5B%5B39.597000114230994%2C-120.23357822047421%5D%2C%5B39.597000114230994%2C-119.24480868922421%5D%2C%5B39.195852396183625%2C-119.24480868922421%5D%2C%5B39.195852396183625%2C-120.23357822047421%5D%2C%5B39.597000114230994%2C-120.23357822047421%5D%5D%5D" target="_blank" rel="noopener" class="search-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Search on Engel &amp; Völkers
-        </a>
-      </div>
-    </div>
-
-    <div class="search-map-col">
-      <iframe
-        loading="lazy"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-120.1,39.35,-119.45,39.75&layer=mapnik&marker=39.5296,-119.8138"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Reno–Sparks area map">
-      </iframe>
-      <div class="search-map-overlay"></div>
-      <div class="search-map-badge">Reno · Sparks · Fernley · Carson City</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- LISTINGS PREVIEW -->
-<div id="listings" class="page-section listings-section">
-  <div class="container">
-    <span class="label">Recent Listings</span>
-    <h2 class="title">Representing buyers and sellers across the region.</h2>
-    <p class="lead">A selection of recent closings across Reno, Sparks, and Fernley. View all 10 on the full listings page.</p>
-
-    <div class="listings-grid" style="grid-template-columns:repeat(4,1fr);">
-
-      <article class="listing-card fade-up">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/53a1f69059ecb8a04770bbba3b5a19a3-cc_ft_768.webp')">
-          <span class="listing-badge">Sold &middot; Fernley</span>
-          <span class="listing-price">$419,900</span>
-        </div>
-        <div class="listing-body">
-          <h4>768 Divot Dr</h4>
-          <div class="listing-addr">Fernley, NV 89408</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>3</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>1,847</strong> sqft</span>
-          </div>
-          <div class="listing-meta"><span>Apr 16, 2026</span><span>Represented: <strong>Buyer</strong></span></div>
-        </div>
-      </article>
-
-      <article class="listing-card fade-up fade-up-d1">
-        <div class="listing-img" style="background-image:url('./brand_assets/IMG_7166.jpeg')">
-          <span class="listing-badge">Closed &middot; Sparks</span>
-          <span class="listing-price">$565,000</span>
-        </div>
-        <div class="listing-body">
-          <h4>3288 Genil Ct</h4>
-          <div class="listing-addr">Sparks, NV 89436</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>4</strong> bd</span>
-            <span class="listing-spec"><strong>3</strong> ba</span>
-            <span class="listing-spec"><strong>2,306</strong> sqft</span>
-          </div>
-          <div class="listing-meta"><span>Apr 14, 2026</span><span>Represented: <strong>Buyer</strong></span></div>
-        </div>
-      </article>
-
-      <article class="listing-card fade-up fade-up-d2">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/8671ee8e7a5afd938a971fcf2c23000c-cc_ft_768.webp')">
-          <span class="listing-badge">Sold &middot; Sparks</span>
-          <span class="listing-price">$490,000</span>
-        </div>
-        <div class="listing-body">
-          <h4>2138 Rizzo Dr</h4>
-          <div class="listing-addr">Sparks, NV 89434</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>3</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>2,012</strong> sqft</span>
-          </div>
-          <div class="listing-meta"><span>Nov 3, 2025</span><span>Represented: <strong>Buyer</strong></span></div>
-        </div>
-      </article>
-
-      <article class="listing-card fade-up fade-up-d3">
-        <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/1b6847e12b8f3262feb9799d5bd7de02-cc_ft_768.webp')">
-          <span class="listing-badge">Sold &middot; Reno</span>
-          <span class="listing-price">$410,000</span>
-        </div>
-        <div class="listing-body">
-          <h4>4318 Leeward Ln</h4>
-          <div class="listing-addr">Reno, NV 89502</div>
-          <div class="listing-specs">
-            <span class="listing-spec"><strong>3</strong> bd</span>
-            <span class="listing-spec"><strong>2</strong> ba</span>
-            <span class="listing-spec"><strong>1,792</strong> sqft</span>
-          </div>
-          <div class="listing-meta"><span>Oct 30, 2025</span><span>Represented: <strong>Seller</strong></span></div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="listings-teaser-cta">
-      <a href="/listings" class="view-all-btn">
-        View All 10 Listings
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
 <!-- CONTACT CTA -->
 <div id="contact" class="page-section contact-cta">
   <div class="container">
@@ -1675,107 +1184,195 @@
     </div>
   </div>
 </div>
-<!-- AREAS -->
-<div id="areas" class="page-section">
-  <div class="container areas-section">
-    <span class="label">Areas Served</span>
-    <h2 class="title" style="margin-left:auto;margin-right:auto;">Specializing in the neighborhoods you love.</h2>
-    <p class="lead" style="margin-left:auto;margin-right:auto;">Jessica's local knowledge runs deep across these communities.</p>
 
-    <!-- Floating cursor preview (desktop only) -->
-    <div class="area-preview-wrap" id="area-preview-wrap" aria-hidden="true">
-      <div class="area-preview" id="area-preview">
-        <img class="area-preview-img" data-area="reno"
-          src="./brand_assets/area-reno.jpg"
-          alt="Reno">
-        <img class="area-preview-img" data-area="sparks"
-          src="./brand_assets/area-sparks.jpg"
-          alt="Sparks">
-        <img class="area-preview-img" data-area="fernley"
-          src="./brand_assets/area-fernley.jpg"
-          alt="Fernley">
-        <img class="area-preview-img" data-area="carson"
-          src="./brand_assets/area-carson.jpg"
-          alt="Carson City">
-        <img class="area-preview-img" data-area="tahoe"
-          src="./brand_assets/area-tahoe.jpg"
-          alt="Lake Tahoe">
-        <div class="area-preview-gloss"></div>
+<!-- HOME VALUATION -->
+<div id="home-valuation" class="page-section" style="padding-bottom:0;">
+  <div class="container">
+    <span class="label" style="justify-content:center;">Free Home Valuation</span>
+    <h2 class="title" style="text-align:center;max-width:700px;margin:0 auto;">Know What Your Home Is Worth.</h2>
+    <p class="lead" style="text-align:center;max-width:620px;margin:0 auto;">Jessica delivers precise, no-pressure valuations built on real comparable sales and deep local knowledge — not online estimates.</p>
+
+    <div class="valuation-split">
+      <!-- LEFT -->
+      <div class="valuation-left">
+        <span class="label">Why It Matters</span>
+        <h3 style="font-family:'Gilda Display',serif;font-size:1.55rem;color:var(--ink);margin:12px 0 0;font-weight:400;">Pricing isn't guesswork. It's strategy.</h3>
+        <div class="valuation-trust">
+          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Backed by real comparable sales — not algorithms</div>
+          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Deep local knowledge of Reno, Sparks &amp; Tahoe</div>
+          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>No pressure, no obligation — ever</div>
+          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Bilingual consultations — English &amp; Spanish</div>
+        </div>
+        <a href="/contact" class="btn">Request Your Free Valuation</a>
+      </div>
+      <!-- RIGHT: Inline form -->
+      <div class="valuation-right">
+        <div id="val-form-wrap">
+          <span class="val-form-label">Get Started Today</span>
+          <p class="val-form-header">What's your home worth?</p>
+          <div class="val-form-field">
+            <input type="text" id="val-address" placeholder="Property Address" autocomplete="street-address">
+          </div>
+          <div class="val-form-row">
+            <div class="val-form-field">
+              <input type="text" id="val-name" placeholder="Your Name" autocomplete="name">
+            </div>
+            <div class="val-form-field">
+              <input type="email" id="val-email" placeholder="Email Address" autocomplete="email">
+            </div>
+          </div>
+          <button class="val-form-submit" id="val-submit">Get My Valuation</button>
+          <p class="val-form-note">No pressure &nbsp;&middot;&nbsp; Typically responds within 24 hrs</p>
+        </div>
+        <div class="val-form-success" id="val-success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:36px;height:36px;margin:0 auto 16px;display:block;"><polyline points="20 6 9 17 4 12"/></svg>
+          <p>Jessica will be in touch soon.</p>
+        </div>
+        <div class="val-form-error" id="val-error">
+          <p>Something went wrong. Please try again or call directly.</p>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="areas-list">
-
-      <a class="area-row" href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A39.5296%2C%22lng%22%3A-119.8138%7D&zoom=12&boundary=%5B%5B%5B39.62%2C-119.95%5D%2C%5B39.62%2C-119.68%5D%2C%5B39.44%2C-119.68%5D%2C%5B39.44%2C-119.95%5D%2C%5B39.62%2C-119.95%5D%5D%5D&omnibox=Reno%2C+NV%2C+USA" target="_blank" rel="noopener" data-area="reno">
-        <div class="area-row-bg"></div>
-        <div class="area-row-inner">
-          <div class="area-row-left">
-            <div class="area-row-title">Reno</div>
-            <div class="area-row-sub">Primary Market</div>
-          </div>
-          <img class="area-row-thumb" src="./brand_assets/area-reno.jpg" alt="Reno, NV">
-          <svg class="area-row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
+  <!-- Why It Matters cards -->
+  <div class="valuation-why">
+    <div class="container">
+      <div class="valuation-why-grid">
+        <div class="valuation-why-card fade-up">
+          <div class="valuation-why-title">Thinking of Selling?</div>
+          <p class="valuation-why-body">Pricing right from day one attracts more offers and shortens your time on market. Know your number before you decide.</p>
         </div>
-      </a>
-
-      <a class="area-row" href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A39.5349%2C%22lng%22%3A-119.7527%7D&zoom=12&boundary=%5B%5B%5B39.61%2C-119.86%5D%2C%5B39.61%2C-119.65%5D%2C%5B39.46%2C-119.65%5D%2C%5B39.46%2C-119.86%5D%2C%5B39.61%2C-119.86%5D%5D%5D&omnibox=Sparks%2C+NV%2C+USA" target="_blank" rel="noopener" data-area="sparks">
-        <div class="area-row-bg"></div>
-        <div class="area-row-inner">
-          <div class="area-row-left">
-            <div class="area-row-title">Sparks</div>
-            <div class="area-row-sub">Primary Market</div>
-          </div>
-          <img class="area-row-thumb" src="./brand_assets/area-sparks.jpg" alt="Sparks, NV">
-          <svg class="area-row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
+        <div class="valuation-why-card fade-up fade-up-d1">
+          <div class="valuation-why-title">Refinancing Your Home?</div>
+          <p class="valuation-why-body">Your equity position determines your rate. A current valuation gives you the real number your lender needs.</p>
         </div>
-      </a>
-
-      <a class="area-row" href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A39.6079%2C%22lng%22%3A-119.2005%7D&zoom=12&boundary=%5B%5B%5B39.72%2C-119.35%5D%2C%5B39.72%2C-119.05%5D%2C%5B39.50%2C-119.05%5D%2C%5B39.50%2C-119.35%5D%2C%5B39.72%2C-119.35%5D%5D%5D&omnibox=Fernley%2C+NV%2C+USA" target="_blank" rel="noopener" data-area="fernley">
-        <div class="area-row-bg"></div>
-        <div class="area-row-inner">
-          <div class="area-row-left">
-            <div class="area-row-title">Fernley</div>
-            <div class="area-row-sub">Primary Market</div>
-          </div>
-          <img class="area-row-thumb" src="./brand_assets/area-fernley.jpg" alt="Fernley, NV">
-          <svg class="area-row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
+        <div class="valuation-why-card fade-up fade-up-d2">
+          <div class="valuation-why-title">Tracking Your Investment?</div>
+          <p class="valuation-why-body">Your home is your largest asset. Stay informed as the Reno market shifts — don't rely on algorithm estimates.</p>
         </div>
-      </a>
-
-      <a class="area-row" href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A39.1638%2C%22lng%22%3A-119.7674%7D&zoom=12&boundary=%5B%5B%5B39.24%2C-119.87%5D%2C%5B39.24%2C-119.67%5D%2C%5B39.09%2C-119.67%5D%2C%5B39.09%2C-119.87%5D%2C%5B39.24%2C-119.87%5D%5D%5D&omnibox=Carson+City%2C+NV%2C+USA" target="_blank" rel="noopener" data-area="carson">
-        <div class="area-row-bg"></div>
-        <div class="area-row-inner">
-          <div class="area-row-left">
-            <div class="area-row-title">Carson City</div>
-            <div class="area-row-sub">Surrounding Area</div>
-          </div>
-          <img class="area-row-thumb" src="./brand_assets/area-carson.jpg" alt="Carson City, NV">
-          <svg class="area-row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
+        <div class="valuation-why-card fade-up fade-up-d3">
+          <div class="valuation-why-title">Planning Improvements?</div>
+          <p class="valuation-why-body">Know which upgrades add real value in your specific neighborhood before you spend a single dollar on renovations.</p>
         </div>
-      </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <a class="area-row" href="https://coombesgroupre.com/home-search/listings?listingStatus=%5B%22ACTIVE%22%2C%22COMING_SOON%22%5D&center=%7B%22lat%22%3A38.9618%2C%22lng%22%3A-119.9442%7D&zoom=11&boundary=%5B%5B%5B39.23%2C-120.15%5D%2C%5B39.23%2C-119.75%5D%2C%5B38.70%2C-119.75%5D%2C%5B38.70%2C-120.15%5D%2C%5B39.23%2C-120.15%5D%5D%5D&omnibox=Lake+Tahoe%2C+NV%2C+USA" target="_blank" rel="noopener" data-area="tahoe">
-        <div class="area-row-bg"></div>
-        <div class="area-row-inner">
-          <div class="area-row-left">
-            <div class="area-row-title">Lake Tahoe</div>
-            <div class="area-row-sub">Surrounding Area</div>
+<!-- VALUATION FAQ -->
+<div class="val-accordion-section page-section">
+  <div class="container">
+    <span class="label" style="justify-content:center;">Common Questions</span>
+    <h2 class="title" style="text-align:center;max-width:640px;margin:0 auto;">Everything you want to know about home valuations.</h2>
+    <div class="val-accordion" id="val-accordion">
+
+      <div class="val-acc-item">
+        <button class="val-acc-trigger" aria-expanded="false">
+          <span class="val-acc-q">How is a home valuation different from an appraisal?</span>
+          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="val-acc-body">
+          <div class="val-acc-body-inner">
+            <p>A home appraisal is a formal assessment ordered by a lender and conducted by a licensed appraiser — required during financing. A home valuation (CMA) is performed by your real estate agent using recent comparable sales, active listings, and local market conditions. Jessica's valuations are free, faster, and give you the strategic pricing insight you need before you even decide to list.</p>
           </div>
-          <img class="area-row-thumb" src="./brand_assets/area-tahoe.jpg" alt="Lake Tahoe, NV">
-          <svg class="area-row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
         </div>
-      </a>
+      </div>
 
+      <div class="val-acc-item">
+        <button class="val-acc-trigger" aria-expanded="false">
+          <span class="val-acc-q">How accurate are online estimates like Zillow's Zestimate?</span>
+          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="val-acc-body">
+          <div class="val-acc-body-inner">
+            <p>Online estimates can be off by 5–20% or more, especially in fast-moving markets like Reno. They rely on public data and algorithms that can't account for your home's condition, specific location, recent renovations, or neighborhood nuances. Jessica reviews each property personally and layers in local knowledge that no algorithm can replicate — giving you a number you can actually act on.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="val-acc-item">
+        <button class="val-acc-trigger" aria-expanded="false">
+          <span class="val-acc-q">Is there any obligation if I request a valuation?</span>
+          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="val-acc-body">
+          <div class="val-acc-body-inner">
+            <p>None at all. Jessica offers home valuations as a genuine resource — whether you're thinking of selling next month or just want to understand your equity position. No pressure, no hard sell. Many of Jessica's best clients started with a simple valuation conversation months or years before they were ready to make a move.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="val-acc-item">
+        <button class="val-acc-trigger" aria-expanded="false">
+          <span class="val-acc-q">How long does it take to get a valuation?</span>
+          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="val-acc-body">
+          <div class="val-acc-body-inner">
+            <p>After you submit your request, Jessica typically reaches out within 24 hours to gather a few details about your home. From there, she prepares a detailed market analysis and walks you through the results. The whole process usually takes 2–3 business days from initial request to your completed valuation.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CMA vs APPRAISAL -->
+<div class="val-methods">
+  <div class="container" style="padding-top:0;padding-bottom:0;">
+    <div style="padding:80px 0 48px;text-align:center;">
+      <span class="label" style="justify-content:center;">Understanding the Difference</span>
+      <h2 class="title" style="max-width:640px;margin:0 auto;">CMA vs. Formal Appraisal</h2>
+    </div>
+    <div class="val-methods-inner">
+      <div class="val-method-card">
+        <div class="val-method-eyebrow">What Jessica provides</div>
+        <div class="val-method-title">Comparative Market Analysis</div>
+        <p class="val-method-body">A strategic pricing report built from real sales data, active listings, and Jessica's firsthand knowledge of your neighborhood — designed to help you make smart, informed decisions.</p>
+        <ul class="val-method-list">
+          <li>Free of charge — no strings attached</li>
+          <li>Completed in 2–3 business days</li>
+          <li>Factors in condition, upgrades &amp; location nuance</li>
+          <li>Paired with a personal consultation</li>
+          <li>Ideal for sellers, investors &amp; curious homeowners</li>
+        </ul>
+      </div>
+      <div class="val-method-card">
+        <div class="val-method-eyebrow">Required by lenders</div>
+        <div class="val-method-title">Formal Appraisal</div>
+        <p class="val-method-body">A licensed appraiser's official assessment required during mortgage financing or refinancing. Legally binding, lender-ordered, and based on a standardized methodology.</p>
+        <ul class="val-method-list">
+          <li>Cost: typically $400–$700</li>
+          <li>Ordered by your lender, not your agent</li>
+          <li>Required for purchase loans &amp; refinancing</li>
+          <li>Takes 1–2 weeks to complete</li>
+          <li>May not reflect current market momentum</li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-bottom:80px;"></div>
+  </div>
+</div>
+
+<!-- AGENT TRUST PANEL -->
+<div class="val-agent-section">
+  <div class="container">
+    <div class="val-agent">
+      <img class="val-agent-img" src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor">
+      <div>
+        <div class="val-agent-name">Jessica Villaseñor</div>
+        <div class="val-agent-title">REALTOR&reg; &nbsp;&middot;&nbsp; Engel &amp; Völkers Reno</div>
+        <p class="val-agent-bio">Jessica is a bilingual buy-and-hold specialist with a passion for helping clients understand exactly what their home is worth. She brings an investor's eye, deep local market expertise, and a zero-pressure approach to every valuation — because the right information changes everything.</p>
+        <div class="val-agent-badges">
+          <span class="val-agent-badge">Northern Nevada Expert</span>
+          <span class="val-agent-badge">Bilingual &middot; EN / ES</span>
+          <span class="val-agent-badge">Buy &amp; Hold Specialist</span>
+          <span class="val-agent-badge">Lic. NV S.0202253</span>
+        </div>
+        <a href="/contact" class="val-agent-cta">Request Your Free Valuation</a>
+      </div>
     </div>
   </div>
 </div>
@@ -1874,8 +1471,7 @@
   <div class="footer-divider"></div>
   <div class="footer-socials">
     <a href="https://www.instagram.com/jessicavillasenor_realtor" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.facebook.com/ev.truckee.9/" target="_blank" rel="noopener">Facebook</a>
-    <a href="https://www.linkedin.com/in/ev-reno-tahoe-truckee-a3052a179/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener">E&amp;V Profile</a>
   </div>
   <div class="footer-legal">© 2026 · License # NV S.0202253 · Engel &amp; Völkers Reno · Equal Housing Opportunity</div>
@@ -2019,60 +1615,60 @@
     document.getElementById('contact-form').addEventListener('submit', function(e) { e.preventDefault(); });
   })();
 
-  // ── Process scroll card ──
+  // ── Valuation mini-form ──
   (function () {
-    var card = document.getElementById('ps-card');
-    if (!card) return;
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
-    function update() {
-      var rect = card.getBoundingClientRect();
-      var cardCenter = rect.top + rect.height / 2;
-      // t=0 when card center is at viewport bottom; t=1 when card center reaches viewport center
-      var t = clamp(1 - (cardCenter - window.innerHeight / 2) / (window.innerHeight / 2), 0, 1);
-      var mobile = window.innerWidth <= 768;
-      card.style.transform = 'rotateX(' + lerp(mobile ? 12 : 16, 0, t) + 'deg) scale(' + lerp(mobile ? 0.92 : 0.97, 1, t) + ')';
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    var submitBtn = document.getElementById('val-submit');
+    var formWrap  = document.getElementById('val-form-wrap');
+    var successEl = document.getElementById('val-success');
+    var errorEl   = document.getElementById('val-error');
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', function () {
+      var address = document.getElementById('val-address').value.trim();
+      var name    = document.getElementById('val-name').value.trim();
+      var email   = document.getElementById('val-email').value.trim();
+      if (!address || !name || !email) {
+        if (!address) document.getElementById('val-address').focus();
+        else if (!name) document.getElementById('val-name').focus();
+        else document.getElementById('val-email').focus();
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, phone: '', interest: 'Valuation', message: 'Home valuation request for: ' + address })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (d.success) {
+          formWrap.style.display = 'none';
+          successEl.style.display = 'block';
+        } else {
+          errorEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Get My Valuation';
+        }
+      }).catch(function () {
+        errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get My Valuation';
+      });
+    });
   })();
 
-  // ── Areas — lerp cursor preview ──
+  // ── Valuation accordion ──
   (function () {
-    const wrap = document.getElementById('area-preview-wrap');
-    const preview = document.getElementById('area-preview');
-    const areasSection = document.getElementById('areas');
-    const imgs = preview.querySelectorAll('.area-preview-img');
-    let mouseX = 0, mouseY = 0, smoothX = 0, smoothY = 0;
-    let rafId = null;
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    function tick() {
-      smoothX = lerp(smoothX, mouseX, 0.13);
-      smoothY = lerp(smoothY, mouseY, 0.13);
-      wrap.style.transform = 'translate3d(' + (smoothX + 24) + 'px,' + (smoothY - 116) + 'px,0)';
-      rafId = requestAnimationFrame(tick);
-    }
-    function startLoop() { if (!rafId) rafId = requestAnimationFrame(tick); }
-    function stopLoop() { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
-    if (areasSection) {
-      areasSection.addEventListener('mouseenter', startLoop);
-      areasSection.addEventListener('mouseleave', stopLoop);
-    }
-    document.addEventListener('mousemove', function (e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-    document.querySelectorAll('.area-row').forEach(function (row) {
-      row.addEventListener('mouseenter', function () {
-        var area = row.dataset.area;
-        imgs.forEach(function (img) {
-          img.classList.toggle('active', img.dataset.area === area);
+    document.querySelectorAll('.val-acc-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item   = btn.closest('.val-acc-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.val-acc-item.open').forEach(function (o) {
+          o.classList.remove('open');
+          o.querySelector('.val-acc-trigger').setAttribute('aria-expanded', 'false');
         });
-        preview.classList.add('visible');
-      });
-      row.addEventListener('mouseleave', function () {
-        preview.classList.remove('visible');
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   })();
