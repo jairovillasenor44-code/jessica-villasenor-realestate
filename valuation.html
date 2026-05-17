@@ -435,5 +435,69 @@
     });
   })();
 </script>
+
+<!-- QUICK NAV ISLAND -->
+<style>
+#qni-bd{position:fixed;inset:0;z-index:8998;background:rgba(0,0,0,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.22,1,.36,1);}
+#qni-bd.qni-open{opacity:1;pointer-events:auto;}
+#qni{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:8999;background:rgba(20,20,20,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);border-radius:26px;overflow:hidden;width:220px;height:48px;box-shadow:0 16px 48px rgba(0,0,0,.38),0 2px 8px rgba(0,0,0,.22);cursor:pointer;transition:width .48s cubic-bezier(.22,1,.36,1),height .48s cubic-bezier(.22,1,.36,1),border-radius .48s cubic-bezier(.22,1,.36,1);}
+#qni.qni-open{width:280px;height:348px;border-radius:22px;cursor:default;}
+.qni-pill{position:absolute;inset:0;display:flex;align-items:center;gap:10px;padding:0 18px;transition:opacity .18s,filter .22s;}
+#qni.qni-open .qni-pill{opacity:0;pointer-events:none;filter:blur(4px);}
+.qni-dot{width:7px;height:7px;border-radius:50%;background:#b18463;flex-shrink:0;}
+.qni-pill-lbl{flex:1;font-family:'Open Sans',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.82);}
+.qni-pill-arr{color:rgba(255,255,255,.35);font-size:.75rem;line-height:1;}
+.qni-menu{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .22s .14s;}
+#qni.qni-open .qni-menu{opacity:1;pointer-events:auto;}
+.qni-mhd{display:flex;align-items:center;justify-content:space-between;padding:15px 18px 10px;flex-shrink:0;}
+.qni-mtitle{font-family:'Open Sans',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);}
+.qni-mcls{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.35);font-size:1.1rem;line-height:1;padding:2px 5px;transition:color .15s;}
+.qni-mcls:hover{color:rgba(255,255,255,.85);}
+.qni-mdiv{height:1px;background:rgba(255,255,255,.07);margin:0 18px;}
+.qni-links{display:flex;flex-direction:column;padding:6px 10px;}
+.qni-links a{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:9px;font-family:'Open Sans',sans-serif;font-size:.8rem;font-weight:400;color:rgba(255,255,255,.48);letter-spacing:.03em;transition:background .2s,color .2s;text-decoration:none;}
+.qni-links a:hover{background:rgba(177,132,99,.13);color:rgba(255,255,255,.9);}
+.qni-links a.qni-cur{color:#b18463;}
+.qni-links a svg{width:13px;height:13px;flex-shrink:0;opacity:.45;transition:opacity .2s;}
+.qni-links a:hover svg,.qni-links a.qni-cur svg{opacity:1;}
+</style>
+<div id="qni-bd"></div>
+<div id="qni" role="navigation" aria-label="Quick navigation" aria-expanded="false">
+  <div class="qni-pill">
+    <div class="qni-dot"></div>
+    <span class="qni-pill-lbl">Quick Nav</span>
+    <span class="qni-pill-arr">&#8593;</span>
+  </div>
+  <div class="qni-menu" aria-hidden="true">
+    <div class="qni-mhd">
+      <span class="qni-mtitle">Quick Navigation</span>
+      <button class="qni-mcls" id="qni-x" aria-label="Close">&#x2715;</button>
+    </div>
+    <div class="qni-mdiv"></div>
+    <nav class="qni-links">
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+      <a href="listings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Listings</a>
+      <a href="valuation.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Valuation</a>
+      <a href="home-search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Home Search</a>
+      <a href="process.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Process</a>
+      <a href="faq.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a>
+    </nav>
+  </div>
+</div>
+<script>
+(function(){
+  var el=document.getElementById('qni'),bd=document.getElementById('qni-bd'),xb=document.getElementById('qni-x'),mn=el.querySelector('.qni-menu');
+  function openIsland(){el.classList.add('qni-open');bd.classList.add('qni-open');mn.removeAttribute('aria-hidden');el.setAttribute('aria-expanded','true');}
+  function closeIsland(){el.classList.remove('qni-open');bd.classList.remove('qni-open');mn.setAttribute('aria-hidden','true');el.setAttribute('aria-expanded','false');}
+  el.addEventListener('click',function(){if(!el.classList.contains('qni-open'))openIsland();});
+  xb.addEventListener('click',function(e){e.stopPropagation();closeIsland();});
+  bd.addEventListener('click',closeIsland);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.classList.contains('qni-open'))closeIsland();});
+  var p=window.location.pathname.split('/').pop();
+  if(!p||p==='')p='index.html';
+  el.querySelectorAll('.qni-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('qni-cur');});
+})();
+</script>
+
 </body>
 </html>
