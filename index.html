@@ -434,86 +434,6 @@
     text-transform: uppercase; color: var(--muted);
   }
 
-  /* ─── HOME VALUATION ─── */
-  .valuation-split {
-    display: grid;
-    grid-template-columns: 55fr 45fr;
-    gap: 0;
-    margin-top: 64px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .valuation-left { padding: 52px 56px; background: var(--bg); }
-  .valuation-right {
-    background: var(--green-dk);
-    padding: 52px 48px;
-    position: relative; overflow: hidden;
-  }
-  .valuation-right::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(177,132,99,.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .valuation-trust { margin: 28px 0 36px; display: flex; flex-direction: column; gap: 12px; }
-  .valuation-trust-item { display: flex; align-items: center; gap: 10px; font-size: .83rem; color: var(--muted); }
-  .valuation-trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-  .val-form-label { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 6px; display: block; }
-  .val-form-header { font-family: 'Gilda Display', serif; font-size: 1.45rem; color: #fff; margin-bottom: 28px; }
-  .val-form-field { margin-bottom: 14px; }
-  .val-form-field input {
-    width: 100%; padding: 12px 15px;
-    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
-    font-family: 'Open Sans', sans-serif; font-size: .88rem; font-weight: 300;
-    color: #fff; border-radius: 0;
-    transition: border-color .2s;
-  }
-  .val-form-field input::placeholder { color: rgba(255,255,255,.32); }
-  .val-form-field input:focus { outline: none; border-color: var(--accent); }
-  .val-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .val-form-submit {
-    width: 100%; margin-top: 6px;
-    padding: 14px 0;
-    background: var(--accent); color: #fff;
-    font-family: 'Open Sans', sans-serif; font-size: .68rem; font-weight: 400;
-    letter-spacing: .2em; text-transform: uppercase;
-    border: none; cursor: pointer;
-    transition: background .22s;
-  }
-  .val-form-submit:hover { background: var(--accent-dk); }
-  .val-form-submit:disabled { opacity: .6; cursor: default; }
-  .val-form-note { font-size: .72rem; color: rgba(255,255,255,.28); margin-top: 10px; text-align: center; }
-  .val-form-success, .val-form-error { display: none; text-align: center; padding: 20px; }
-  .val-form-success p { color: rgba(255,255,255,.7); font-size: .88rem; }
-  .val-form-error p { color: #e87c7c; font-size: .85rem; margin-top: 8px; }
-
-  /* Why-it-matters strip */
-  .valuation-why { background: var(--light); }
-  .valuation-why-grid { display: grid; grid-template-columns: repeat(4,1fr); }
-  .valuation-why-card { padding: 40px 36px; border-right: 1px solid var(--border); border-top: 3px solid var(--accent); }
-  .valuation-why-card:last-child { border-right: none; }
-  .valuation-why-title { font-family: 'Gilda Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; }
-  .valuation-why-body { font-size: .83rem; color: var(--muted); line-height: 1.8; }
-
-  /* Valuation FAQ accordion */
-  .val-accordion-section { background: var(--bg); }
-  .val-accordion { border-top: 1px solid var(--border); text-align: left; margin-top: 40px; }
-  .val-acc-item { border-bottom: 1px solid var(--border); }
-  .val-acc-trigger {
-    width: 100%; display: flex; justify-content: space-between; align-items: center;
-    padding: 26px 4px; background: none; border: none; cursor: pointer;
-    text-align: left; gap: 24px;
-  }
-  .val-acc-q { font-family: 'Gilda Display', serif; font-size: 1.05rem; color: var(--ink); }
-  .val-acc-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform .3s; }
-  .val-acc-item.open .val-acc-icon { transform: rotate(45deg); }
-  .val-acc-body { overflow: hidden; max-height: 0; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
-  .val-acc-item.open .val-acc-body { max-height: 400px; }
-  .val-acc-body-inner { padding: 0 4px 28px; max-width: 820px; }
-  .val-acc-body-inner p { font-size: .88rem; color: var(--muted); line-height: 1.85; }
 
   /* CMA vs Appraisal methods */
   .val-methods { background: var(--light); }
@@ -525,28 +445,6 @@
   .val-method-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; list-style: none; }
   .val-method-list li { font-size: .83rem; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.65; }
   .val-method-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
-
-  /* Agent trust panel */
-  .val-agent-section { background: var(--green-dk); }
-  .val-agent {
-    display: grid; grid-template-columns: auto 1fr;
-    gap: 52px; align-items: center; padding: 80px 0;
-    position: relative; overflow: hidden;
-  }
-  .val-agent::before {
-    content: 'JV';
-    position: absolute; right: -20px; bottom: -60px;
-    font-family: 'Gilda Display', serif; font-size: 18rem; line-height: 1;
-    color: rgba(255,255,255,.025); pointer-events: none; user-select: none;
-  }
-  .val-agent-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); flex-shrink: 0; }
-  .val-agent-name { font-family: 'Gilda Display', serif; font-size: 1.7rem; color: #fff; margin-bottom: 6px; }
-  .val-agent-title { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-  .val-agent-bio { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.85; margin-bottom: 24px; max-width: 580px; }
-  .val-agent-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
-  .val-agent-badge { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(177,132,99,.3); padding: 7px 14px; }
-  .val-agent-cta { display: inline-block; padding: 14px 36px; background: var(--accent); color: #fff; font-family: 'Open Sans', sans-serif; font-size: .68rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; transition: background .22s; }
-  .val-agent-cta:hover { background: var(--accent-dk); }
 
   /* ─── TESTIMONIALS ─── */
   .testimonials-section {
@@ -796,6 +694,19 @@
   .slide-btn-status svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   @keyframes slide-spin { to { transform: rotate(360deg); } }
   .slide-spin { animation: slide-spin 1s linear infinite; transform-origin: center; }
+
+  /* ─── AGENT TRUST PANEL ─── */
+  .val-agent-section { background: var(--green-dk); }
+  .val-agent { display: grid; grid-template-columns: auto 1fr; gap: 52px; align-items: center; padding: 80px 0; position: relative; overflow: hidden; }
+  .val-agent::before { content: 'JV'; position: absolute; right: -20px; bottom: -60px; font-family: 'Gilda Display', serif; font-size: 18rem; line-height: 1; color: rgba(255,255,255,.025); pointer-events: none; user-select: none; }
+  .val-agent-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); flex-shrink: 0; }
+  .val-agent-name { font-family: 'Gilda Display', serif; font-size: 1.7rem; color: #fff; margin-bottom: 6px; }
+  .val-agent-title { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .val-agent-bio { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.85; margin-bottom: 24px; max-width: 580px; }
+  .val-agent-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+  .val-agent-badge { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(177,132,99,.3); padding: 7px 14px; }
+  .val-agent-cta { display: inline-block; padding: 14px 36px; background: var(--accent); color: #fff; font-family: 'Open Sans', sans-serif; font-size: .68rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; transition: background .22s; }
+  .val-agent-cta:hover { background: var(--accent-dk); }
 
   /* ─── FOOTER ─── */
   footer {
@@ -1051,36 +962,6 @@
     .valuation-why-grid { grid-template-columns: 1fr; }
   }
 
-  /* ── Lightbox ── */
-  #lightbox {
-    display: none;
-    position: fixed; inset: 0; z-index: 9999;
-    background: rgba(10,10,10,.92);
-    align-items: center; justify-content: center;
-    padding: 24px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  #lightbox.open { display: flex; }
-  #lightbox img {
-    max-width: 100%; max-height: 90vh;
-    border-radius: 6px;
-    box-shadow: 0 32px 80px rgba(0,0,0,.6);
-    object-fit: contain;
-    opacity: 0;
-    transform: scale(0.96);
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-  #lightbox.open img { opacity: 1; transform: scale(1); }
-  #lightbox-close {
-    position: absolute; top: 20px; right: 24px;
-    background: none; border: none; cursor: pointer;
-    color: rgba(255,255,255,.7);
-    font-size: 2rem; line-height: 1;
-    padding: 4px 8px;
-    transition: color 0.15s ease;
-  }
-  #lightbox-close:hover { color: #fff; }
 </style>
 </head>
 <body>
@@ -1091,7 +972,7 @@
   <ul class="nav-links">
     <li><a href="/about">About</a></li>
     <li><a href="/listings">Listings</a></li>
-    <li><a href="/#home-valuation">Valuation</a></li>
+    <li><a href="/valuation">Valuation</a></li>
     <li><a href="/home-search">Home Search</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="/contact">Referrals</a></li>
@@ -1109,7 +990,7 @@
 <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="/about" class="mobile-link">About</a>
   <a href="/listings" class="mobile-link">Listings</a>
-  <a href="/#home-valuation" class="mobile-link">Valuation</a>
+  <a href="/valuation" class="mobile-link">Valuation</a>
   <a href="/home-search" class="mobile-link">Home Search</a>
   <a href="#testimonials" class="mobile-link">Testimonials</a>
   <a href="/faq.html" class="mobile-link">FAQ</a>
@@ -1185,140 +1066,6 @@
   </div>
 </div>
 
-<!-- HOME VALUATION -->
-<div id="home-valuation" class="page-section" style="padding-bottom:0;">
-  <div class="container">
-    <span class="label" style="justify-content:center;">Free Home Valuation</span>
-    <h2 class="title" style="text-align:center;max-width:700px;margin:0 auto;">Know What Your Home Is Worth.</h2>
-    <p class="lead" style="text-align:center;max-width:620px;margin:0 auto;">Jessica delivers precise, no-pressure valuations built on real comparable sales and deep local knowledge — not online estimates.</p>
-
-    <div class="valuation-split">
-      <!-- LEFT -->
-      <div class="valuation-left">
-        <span class="label">Why It Matters</span>
-        <h3 style="font-family:'Gilda Display',serif;font-size:1.55rem;color:var(--ink);margin:12px 0 0;font-weight:400;">Pricing isn't guesswork. It's strategy.</h3>
-        <div class="valuation-trust">
-          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Backed by real comparable sales — not algorithms</div>
-          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Deep local knowledge of Reno, Sparks &amp; Tahoe</div>
-          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>No pressure, no obligation — ever</div>
-          <div class="valuation-trust-item"><div class="valuation-trust-dot"></div>Bilingual consultations — English &amp; Spanish</div>
-        </div>
-        <a href="/contact" class="btn">Request Your Free Valuation</a>
-      </div>
-      <!-- RIGHT: Inline form -->
-      <div class="valuation-right">
-        <div id="val-form-wrap">
-          <span class="val-form-label">Get Started Today</span>
-          <p class="val-form-header">What's your home worth?</p>
-          <div class="val-form-field">
-            <input type="text" id="val-address" placeholder="Property Address" autocomplete="street-address">
-          </div>
-          <div class="val-form-row">
-            <div class="val-form-field">
-              <input type="text" id="val-name" placeholder="Your Name" autocomplete="name">
-            </div>
-            <div class="val-form-field">
-              <input type="email" id="val-email" placeholder="Email Address" autocomplete="email">
-            </div>
-          </div>
-          <button class="val-form-submit" id="val-submit">Get My Valuation</button>
-          <p class="val-form-note">No pressure &nbsp;&middot;&nbsp; Typically responds within 24 hrs</p>
-        </div>
-        <div class="val-form-success" id="val-success">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:36px;height:36px;margin:0 auto 16px;display:block;"><polyline points="20 6 9 17 4 12"/></svg>
-          <p>Jessica will be in touch soon.</p>
-        </div>
-        <div class="val-form-error" id="val-error">
-          <p>Something went wrong. Please try again or call directly.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why It Matters cards -->
-  <div class="valuation-why">
-    <div class="container">
-      <div class="valuation-why-grid">
-        <div class="valuation-why-card fade-up">
-          <div class="valuation-why-title">Thinking of Selling?</div>
-          <p class="valuation-why-body">Pricing right from day one attracts more offers and shortens your time on market. Know your number before you decide.</p>
-        </div>
-        <div class="valuation-why-card fade-up fade-up-d1">
-          <div class="valuation-why-title">Refinancing Your Home?</div>
-          <p class="valuation-why-body">Your equity position determines your rate. A current valuation gives you the real number your lender needs.</p>
-        </div>
-        <div class="valuation-why-card fade-up fade-up-d2">
-          <div class="valuation-why-title">Tracking Your Investment?</div>
-          <p class="valuation-why-body">Your home is your largest asset. Stay informed as the Reno market shifts — don't rely on algorithm estimates.</p>
-        </div>
-        <div class="valuation-why-card fade-up fade-up-d3">
-          <div class="valuation-why-title">Planning Improvements?</div>
-          <p class="valuation-why-body">Know which upgrades add real value in your specific neighborhood before you spend a single dollar on renovations.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- VALUATION FAQ -->
-<div class="val-accordion-section page-section">
-  <div class="container">
-    <span class="label" style="justify-content:center;">Common Questions</span>
-    <h2 class="title" style="text-align:center;max-width:640px;margin:0 auto;">Everything you want to know about home valuations.</h2>
-    <div class="val-accordion" id="val-accordion">
-
-      <div class="val-acc-item">
-        <button class="val-acc-trigger" aria-expanded="false">
-          <span class="val-acc-q">How is a home valuation different from an appraisal?</span>
-          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="val-acc-body">
-          <div class="val-acc-body-inner">
-            <p>A home appraisal is a formal assessment ordered by a lender and conducted by a licensed appraiser — required during financing. A home valuation (CMA) is performed by your real estate agent using recent comparable sales, active listings, and local market conditions. Jessica's valuations are free, faster, and give you the strategic pricing insight you need before you even decide to list.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="val-acc-item">
-        <button class="val-acc-trigger" aria-expanded="false">
-          <span class="val-acc-q">How accurate are online estimates like Zillow's Zestimate?</span>
-          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="val-acc-body">
-          <div class="val-acc-body-inner">
-            <p>Online estimates can be off by 5–20% or more, especially in fast-moving markets like Reno. They rely on public data and algorithms that can't account for your home's condition, specific location, recent renovations, or neighborhood nuances. Jessica reviews each property personally and layers in local knowledge that no algorithm can replicate — giving you a number you can actually act on.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="val-acc-item">
-        <button class="val-acc-trigger" aria-expanded="false">
-          <span class="val-acc-q">Is there any obligation if I request a valuation?</span>
-          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="val-acc-body">
-          <div class="val-acc-body-inner">
-            <p>None at all. Jessica offers home valuations as a genuine resource — whether you're thinking of selling next month or just want to understand your equity position. No pressure, no hard sell. Many of Jessica's best clients started with a simple valuation conversation months or years before they were ready to make a move.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="val-acc-item">
-        <button class="val-acc-trigger" aria-expanded="false">
-          <span class="val-acc-q">How long does it take to get a valuation?</span>
-          <svg class="val-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="val-acc-body">
-          <div class="val-acc-body-inner">
-            <p>After you submit your request, Jessica typically reaches out within 24 hours to gather a few details about your home. From there, she prepares a detailed market analysis and walks you through the results. The whole process usually takes 2–3 business days from initial request to your completed valuation.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 <!-- CMA vs APPRAISAL -->
 <div class="val-methods">
   <div class="container" style="padding-top:0;padding-bottom:0;">
@@ -1353,27 +1100,6 @@
       </div>
     </div>
     <div style="padding-bottom:80px;"></div>
-  </div>
-</div>
-
-<!-- AGENT TRUST PANEL -->
-<div class="val-agent-section">
-  <div class="container">
-    <div class="val-agent">
-      <img class="val-agent-img" src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor">
-      <div>
-        <div class="val-agent-name">Jessica Villaseñor</div>
-        <div class="val-agent-title">REALTOR&reg; &nbsp;&middot;&nbsp; Engel &amp; Völkers Reno</div>
-        <p class="val-agent-bio">Jessica is a bilingual buy-and-hold specialist with a passion for helping clients understand exactly what their home is worth. She brings an investor's eye, deep local market expertise, and a zero-pressure approach to every valuation — because the right information changes everything.</p>
-        <div class="val-agent-badges">
-          <span class="val-agent-badge">Northern Nevada Expert</span>
-          <span class="val-agent-badge">Bilingual &middot; EN / ES</span>
-          <span class="val-agent-badge">Buy &amp; Hold Specialist</span>
-          <span class="val-agent-badge">Lic. NV S.0202253</span>
-        </div>
-        <a href="/contact" class="val-agent-cta">Request Your Free Valuation</a>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -1454,6 +1180,27 @@
 </div>
 
 </main>
+
+<!-- AGENT TRUST PANEL -->
+<div class="val-agent-section">
+  <div class="container">
+    <div class="val-agent">
+      <img class="val-agent-img" src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor">
+      <div>
+        <div class="val-agent-name">Jessica Villaseñor</div>
+        <div class="val-agent-title">REALTOR&reg; &nbsp;&middot;&nbsp; Engel &amp; Völkers Reno</div>
+        <p class="val-agent-bio">Jessica is a bilingual buy-and-hold specialist with a passion for helping clients understand exactly what their home is worth. She brings an investor's eye, deep local market expertise, and a zero-pressure approach to every transaction — because the right information changes everything.</p>
+        <div class="val-agent-badges">
+          <span class="val-agent-badge">Northern Nevada Expert</span>
+          <span class="val-agent-badge">Bilingual &middot; EN / ES</span>
+          <span class="val-agent-badge">Buy &amp; Hold Specialist</span>
+          <span class="val-agent-badge">Lic. NV S.0202253</span>
+        </div>
+        <a href="/contact" class="val-agent-cta">Work with Jessica</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- STICKY CTA BAR -->
 <div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Call to action">
@@ -1615,64 +1362,6 @@
     document.getElementById('contact-form').addEventListener('submit', function(e) { e.preventDefault(); });
   })();
 
-  // ── Valuation mini-form ──
-  (function () {
-    var submitBtn = document.getElementById('val-submit');
-    var formWrap  = document.getElementById('val-form-wrap');
-    var successEl = document.getElementById('val-success');
-    var errorEl   = document.getElementById('val-error');
-    if (!submitBtn) return;
-    submitBtn.addEventListener('click', function () {
-      var address = document.getElementById('val-address').value.trim();
-      var name    = document.getElementById('val-name').value.trim();
-      var email   = document.getElementById('val-email').value.trim();
-      if (!address || !name || !email) {
-        if (!address) document.getElementById('val-address').focus();
-        else if (!name) document.getElementById('val-name').focus();
-        else document.getElementById('val-email').focus();
-        return;
-      }
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, phone: '', interest: 'Valuation', message: 'Home valuation request for: ' + address })
-      }).then(function (r) { return r.json(); }).then(function (d) {
-        if (d.success) {
-          formWrap.style.display = 'none';
-          successEl.style.display = 'block';
-        } else {
-          errorEl.style.display = 'block';
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Get My Valuation';
-        }
-      }).catch(function () {
-        errorEl.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Get My Valuation';
-      });
-    });
-  })();
-
-  // ── Valuation accordion ──
-  (function () {
-    document.querySelectorAll('.val-acc-trigger').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item   = btn.closest('.val-acc-item');
-        var isOpen = item.classList.contains('open');
-        document.querySelectorAll('.val-acc-item.open').forEach(function (o) {
-          o.classList.remove('open');
-          o.querySelector('.val-acc-trigger').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  })();
-
   // ── Testimonials carousel ──
   (function () {
     var track = document.getElementById('testimonials-track');
@@ -1772,52 +1461,7 @@
     els.forEach(function (el) { obs.observe(el); });
   })();
 
-  // ── Listing photo lightbox ──
-  (function () {
-    var lb = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lightbox-img');
-    var lbClose = document.getElementById('lightbox-close');
-
-    function openLightbox(url, alt) {
-      lbImg.src = url;
-      lbImg.alt = alt || 'Listing photo';
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      lbClose.focus();
-    }
-    function closeLightbox() {
-      lb.classList.remove('open');
-      document.body.style.overflow = '';
-      lbImg.src = '';
-    }
-
-    document.querySelectorAll('.listing-img').forEach(function (el) {
-      var style = el.getAttribute('style') || '';
-      var match = style.match(/url\(['"]?([^'")\s]+)['"]?\)/);
-      if (!match) return;
-      var url = match[1];
-      var card = el.closest('.listing-card');
-      var address = card ? (card.querySelector('h4') || {}).textContent : '';
-      el.setAttribute('role', 'button');
-      el.setAttribute('tabindex', '0');
-      el.setAttribute('aria-label', 'View photo' + (address ? ' of ' + address : ''));
-      el.addEventListener('click', function () { openLightbox(url, address); });
-      el.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(url, address); }
-      });
-    });
-
-    lbClose.addEventListener('click', closeLightbox);
-    lb.addEventListener('click', function (e) { if (e.target === lb) closeLightbox(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox(); });
-  })();
 </script>
-
-  <!-- Lightbox overlay -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Listing photo">
-    <button id="lightbox-close" aria-label="Close photo">&#x2715;</button>
-    <img id="lightbox-img" src="" alt="">
-  </div>
 
 </body>
 </html>
