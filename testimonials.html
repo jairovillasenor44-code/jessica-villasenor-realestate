@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Jessica Villaseñor · Engel &amp; Völkers Reno</title>
-<meta name="description" content="Meet Jessica Villaseñor — bilingual REALTOR® with Engel &amp; Völkers Reno, specializing in residential and investment real estate across Northern Nevada.">
-<meta property="og:title" content="About — Jessica Villaseñor · Engel &amp; Völkers Reno">
-<meta property="og:description" content="Meet Jessica Villaseñor — bilingual REALTOR® with Engel &amp; Völkers Reno, specializing in residential and investment real estate across Northern Nevada.">
+<title>Client Stories — Jessica Villaseñor · Engel &amp; Völkers Reno</title>
+<meta name="description" content="Read what clients say about working with Jessica Villaseñor — bilingual real estate advisor with Engel &amp; Völkers Reno, serving Northern Nevada.">
+<meta property="og:title" content="Client Stories — Jessica Villaseñor · Engel &amp; Völkers Reno">
+<meta property="og:description" content="Read what clients say about working with Jessica Villaseñor — bilingual real estate advisor with Engel &amp; Völkers Reno, serving Northern Nevada.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jessicavillasenor.com/about">
+<meta property="og:url" content="https://jessicavillasenor.com/testimonials">
 <meta property="og:image" content="https://jessica-villasenor-realestate.vercel.app/brand_assets/jessica.jpg">
 <meta property="og:site_name" content="Jessica Villaseñor Real Estate">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About — Jessica Villaseñor · Engel &amp; Völkers Reno">
-<meta name="twitter:description" content="Meet Jessica Villaseñor — bilingual REALTOR® with Engel &amp; Völkers Reno, specializing in residential and investment real estate across Northern Nevada.">
+<meta name="twitter:title" content="Client Stories — Jessica Villaseñor · Engel &amp; Völkers Reno">
+<meta name="twitter:description" content="Read what clients say about working with Jessica Villaseñor — bilingual real estate advisor with Engel &amp; Völkers Reno, serving Northern Nevada.">
 <meta name="twitter:image" content="https://jessica-villasenor-realestate.vercel.app/brand_assets/jessica.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7P8XZKV6Q"></script>
 <script>
@@ -76,7 +76,7 @@
   .container{max-width:1280px;margin:0 auto;padding:0 60px;}
   .page-section{padding-top:120px;padding-bottom:120px;}
   .label{display:flex;align-items:center;gap:16px;font-size:.68rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--green-dk);margin-bottom:22px;}
-  .label::before{content:'';width:32px;height:1px;background:var(--green-dk);flex-shrink:0;}
+  .label::before{content:'';width:32px;height:1px;background:var(--green-dk);flex-shrink:0);}
   .title{font-size:clamp(2.4rem,4.5vw,3.8rem);color:var(--ink);margin-bottom:20px;letter-spacing:-.01em;}
 
   /* PAGE BANNER */
@@ -89,48 +89,43 @@
   .page-banner-back:hover{color:var(--accent);}
   .page-banner-back svg{width:14px;height:14px;}
 
-  /* ABOUT */
-  #about{background:linear-gradient(160deg,rgba(44,52,38,.04) 0%,transparent 50%);}
-  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:96px;align-items:start;}
-  .about-img-wrap{position:relative;}
-  .about-img-wrap::before{content:'';position:absolute;top:-20px;left:-20px;width:100%;height:100%;border:1px solid var(--green-dk);opacity:.4;pointer-events:none;z-index:0;}
-  .about-img-wrap img{position:relative;z-index:1;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;display:block;box-shadow:0 24px 64px -16px rgba(0,0,0,.28),0 6px 20px -6px rgba(177,132,99,.18);}
-  .about-img-caption{position:relative;z-index:1;background:var(--green-dk);color:var(--green-soft);padding:14px 20px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;}
-  .about-text p{font-size:.95rem;color:rgba(0,0,0,.68);line-height:1.85;margin-bottom:18px;}
-  .accent-line{width:44px;height:2px;background:var(--green-dk);margin:30px 0;}
-  .about-meta{font-size:.82rem;color:var(--muted);line-height:2;}
-  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border);}
-  .stat{position:relative;}
-  .stat::before{content:'';display:block;width:24px;height:2px;background:var(--green-dk);margin-bottom:16px;}
-  .stat .num{font-family:'Gilda Display',serif;font-size:2.6rem;color:var(--ink);line-height:1;margin-bottom:8px;}
-  .stat .lab{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-  .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);}
-  .fade-up.visible{opacity:1;transform:translateY(0);}
+  /* TESTIMONIALS GRID */
+  .testimonials-section{background:var(--green-dk);position:relative;overflow:hidden;}
+  .testimonials-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(177,132,99,.07) 0%,transparent 65%);pointer-events:none;}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:64px;}
+  .t-card{padding:44px 40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);position:relative;transition:background .28s,border-color .28s;}
+  .t-card:hover{background:rgba(255,255,255,.07);border-color:rgba(177,132,99,.2);}
+  .t-quote-mark{font-family:'Gilda Display',serif;font-size:4rem;color:var(--accent);line-height:.7;display:block;margin-bottom:20px;opacity:.7;}
+  .t-stars{color:var(--accent);font-size:.9rem;margin-bottom:20px;letter-spacing:3px;}
+  .t-text{font-family:'Gilda Display',serif;font-size:1.08rem;font-style:italic;font-weight:400;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:28px;}
+  .t-divider{width:32px;height:1px;background:var(--accent);opacity:.5;margin-bottom:20px;}
+  .t-name{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+
+  /* CTA STRIP */
+  .cta-strip{background:var(--bg);padding:80px 60px;}
+  .cta-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;max-width:1160px;margin:0 auto;}
+  .cta-strip-heading{font-family:'Gilda Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);letter-spacing:-.01em;}
+  .cta-strip-actions{display:flex;gap:16px;flex-shrink:0;}
+  .cta-strip-btn{display:inline-block;padding:16px 40px;background:var(--green-dk);color:#fff;font-family:'Open Sans',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;transition:background .25s;}
+  .cta-strip-btn:hover{background:var(--accent);}
 
   /* FOOTER */
-  footer{background:var(--ink);color:#fff;padding:80px 60px 60px;text-align:center;position:relative;overflow:hidden;}
-  footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);}
-  .footer-brand{font-family:'Gilda Display',serif;font-size:1.7rem;letter-spacing:.04em;margin-bottom:10px;}
-  .footer-tagline{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:40px;}
-  .footer-divider{width:40px;height:1px;background:var(--accent);opacity:.6;margin:0 auto 40px;}
-  .footer-socials{display:flex;gap:32px;justify-content:center;margin-bottom:40px;}
-  .footer-socials a{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.48);transition:color .2s;position:relative;}
-  .footer-socials a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .25s;}
-  .footer-socials a:hover{color:rgba(255,255,255,.9);}
-  .footer-socials a:hover::after{transform:scaleX(1);}
-  .footer-legal{font-size:.68rem;color:rgba(255,255,255,.22);letter-spacing:.06em;}
+  footer{background:var(--green-dk);color:rgba(255,255,255,.6);text-align:center;padding:60px 60px 40px;position:relative;}
+  footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(177,132,99,.4),transparent);}
+  .footer-brand{font-family:'Gilda Display',serif;font-size:1.4rem;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.7);}
+  .footer-tagline{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:32px;}
+  .footer-divider{width:40px;height:1px;background:var(--accent);opacity:.4;margin:0 auto 32px;}
+  .footer-socials{display:flex;gap:32px;justify-content:center;margin-bottom:32px;}
+  .footer-socials a{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .2s;}
+  .footer-socials a:hover{color:var(--accent);}
+  .footer-legal{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.18);}
 
-  /* STICKY CTA */
-  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--green-dk);border-top:1px solid rgba(177,132,99,.2);padding:14px 60px;display:flex;align-items:center;justify-content:center;gap:28px;transform:translateY(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.22);}
-  .sticky-cta.visible{transform:translateY(0);}
-  .sticky-cta-text{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);}
-  .sticky-cta-divider{width:1px;height:28px;background:rgba(255,255,255,.1);flex-shrink:0;}
-  .sticky-cta-phone{font-family:'Gilda Display',serif;font-size:1.2rem;color:#fff;transition:color .2s;letter-spacing:.02em;}
-  .sticky-cta-phone:hover{color:var(--accent);}
-  .sticky-cta-btn{padding:10px 30px;background:var(--accent);color:#fff;font-size:.65rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .22s;font-family:'Open Sans',sans-serif;white-space:nowrap;}
-  .sticky-cta-btn:hover{background:var(--accent-dk);}
-  .sticky-cta-close{position:absolute;right:20px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.25);font-size:1.3rem;line-height:1;padding:6px;transition:color .2s;}
-  .sticky-cta-close:hover{color:rgba(255,255,255,.65);}
+  /* FADE-UP */
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  .fade-up-d1{transition-delay:.1s;}
+  .fade-up-d2{transition-delay:.18s;}
+  .fade-up-d3{transition-delay:.26s;}
 
   @media(max-width:900px){
     nav{padding:16px 24px;}
@@ -139,12 +134,13 @@
     .container{padding:0 24px;}
     .page-section{padding-top:80px;padding-bottom:80px;}
     .page-banner{padding:120px 24px 60px;}
-    .about-grid{grid-template-columns:1fr;gap:48px;}
-    .about-img-wrap::before{display:none;}
-    .stat-row{grid-template-columns:1fr 1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .cta-strip{padding:60px 24px;}
+    .cta-strip-inner{flex-direction:column;align-items:flex-start;gap:28px;}
     footer{padding:60px 24px 40px;}
-    .sticky-cta{padding:12px 16px 12px 20px;gap:14px;}
-    .sticky-cta-text,.sticky-cta-divider{display:none;}
+  }
+  @media(max-width:600px){
+    .t-card{padding:32px 24px;}
   }
 </style>
 </head>
@@ -186,45 +182,57 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       Back to home
     </a>
-    <div class="label">About</div>
-    <div class="page-banner-title">Meet Jessica Villaseñor.</div>
+    <div class="label">Client Stories</div>
+    <div class="page-banner-title">What clients say.</div>
   </div>
 </div>
 
-<div id="about" class="page-section">
+<div class="testimonials-section page-section">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-img-wrap fade-up">
-        <img src="./brand_assets/jessica.jpg" alt="Jessica Villaseñor Gutierrez">
-        <div class="about-img-caption">Jessica Villaseñor Gutierrez</div>
+
+    <div class="testimonials-grid">
+
+      <div class="t-card fade-up">
+        <span class="t-quote-mark">&ldquo;</span>
+        <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+        <p class="t-text">My fiancé and I bought our first house with a different realtor — all that realtor did was show us the house and never told us any details about it. Then we got Jessica, and what a complete 180. If you're looking for a realtor who's going to be honest with you and guide you every step of the process, she's the one.</p>
+        <div class="t-divider"></div>
+        <div class="t-name">— Edzar M.</div>
       </div>
-      <div class="about-text fade-up" style="transition-delay:.1s;">
-        <span class="label">About Jessica</span>
-        <h2 class="title">A trusted partner through every step.</h2>
-        <div class="accent-line"></div>
-        <p>Jessica Villaseñor is a passionate real estate investor and entrepreneur who began her journey in her early twenties by designing homes. What started as a hands-on learning experience quickly grew into a deep-rooted passion for real estate investing.</p>
-        <p>Through dedicated mentorship and years of experience, Jessica built and led a successful out-of-state investment team and mastered the buy-and-hold strategy, focusing on creating long-term wealth and financial freedom through real estate.</p>
-        <p>Today, Jessica's life beautifully blends her roles as a devoted mom to her 12-year-old son and proud dog mom to three pups with her unwavering commitment to real estate. Whether she's analyzing deals, mentoring fellow investors, or guiding clients through the buying and selling process across Northern Nevada, Jessica brings the same investor's eye and personal care to every client she represents.</p>
-        <div class="about-meta">
-          <strong>Languages:</strong> English &amp; Spanish &nbsp;·&nbsp;
-          <strong>License #:</strong> NV S.0202253 &nbsp;·&nbsp;
-          <strong>Brokerage:</strong> Engel &amp; Völkers Reno
-        </div>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="num">Bilingual</div>
-            <div class="lab">English &amp; Spanish</div>
-          </div>
-          <div class="stat">
-            <div class="num">Investor</div>
-            <div class="lab">Buy &amp; Hold Specialist</div>
-          </div>
-          <div class="stat">
-            <div class="num">Local</div>
-            <div class="lab">Northern Nevada</div>
-          </div>
-        </div>
+
+      <div class="t-card fade-up fade-up-d1">
+        <span class="t-quote-mark">&ldquo;</span>
+        <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+        <p class="t-text">Jessica is really the best. We've been working with her since May in preparation to sell our home and find our next one. Her attention to detail, thoroughness, constant communication, and professionalism have been vital. She truly is in it for the best interest of her clients.</p>
+        <div class="t-divider"></div>
+        <div class="t-name">— Daisy Martinez</div>
       </div>
+
+      <div class="t-card fade-up fade-up-d2">
+        <span class="t-quote-mark">&ldquo;</span>
+        <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+        <p class="t-text">Very friendly and knowledgeable. This was my third home purchased, and by far the easiest. She went out of her way to meet the inspectors and kept me fully informed at all times. Even months after the sale she's still available if I need her.</p>
+        <div class="t-divider"></div>
+        <div class="t-name">— Mike Zerr</div>
+      </div>
+
+      <div class="t-card fade-up fade-up-d3">
+        <span class="t-quote-mark">&ldquo;</span>
+        <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+        <p class="t-text">Jessica is amazing to work with and works extremely hard to meet your needs, purchasing your new property and making the process very easy! I will definitely use Jessica for future purchases and highly recommend her services!</p>
+        <div class="t-divider"></div>
+        <div class="t-name">— Steven Privette</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-strip-heading">Ready to write your own story?</div>
+    <div class="cta-strip-actions">
+      <a href="contact.html" class="cta-strip-btn">Get in Touch</a>
     </div>
   </div>
 </div>
@@ -238,51 +246,9 @@
     <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener">E&amp;V Profile</a>
   </div>
-  <div class="footer-legal">© 2026 · License # NV S.0202253 · Engel &amp; Völkers Reno · Equal Housing Opportunity</div>
+  <div class="footer-legal">&copy; 2026 &middot; License # NV S.0202253 &middot; Engel &amp; Völkers Reno &middot; Equal Housing Opportunity</div>
 </footer>
 
-<div class="sticky-cta" id="sticky-cta">
-  <span class="sticky-cta-text">Ready to find your next home?</span>
-  <div class="sticky-cta-divider"></div>
-  <a href="tel:+17758136992" class="sticky-cta-phone">(775) 813-6992</a>
-  <a href="contact.html" class="sticky-cta-btn">Book a Call</a>
-  <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Dismiss">×</button>
-</div>
-
-<script>
-  const nav = document.getElementById('site-nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 120); }, { passive: true });
-
-  const hamburger = document.getElementById('hamburger-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-  hamburger.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-  });
-  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    mobileNav.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  }));
-
-  (function () {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
-  })();
-
-  (function () {
-    var bar = document.getElementById('sticky-cta');
-    var closeBtn = document.getElementById('sticky-cta-close');
-    var dismissed = false;
-    setTimeout(function () { if (!dismissed) bar.classList.add('visible'); }, 2200);
-    closeBtn.addEventListener('click', function () { dismissed = true; bar.classList.remove('visible'); });
-  })();
-</script>
-
-<!-- QUICK NAV ISLAND -->
 <style>
 #qni-bd{position:fixed;inset:0;z-index:8998;background:rgba(0,0,0,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.22,1,.36,1);}
 #qni-bd.qni-open{opacity:1;pointer-events:auto;}
@@ -342,6 +308,21 @@
   var p=window.location.pathname.split('/').pop();
   if(!p||p==='')p='index.html';
   el.querySelectorAll('.qni-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('qni-cur');});
+})();
+
+// Nav scroll
+var nav=document.getElementById('site-nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>120);},{passive:true});
+
+// Hamburger
+var hb=document.getElementById('hamburger-btn'),mn=document.getElementById('mobile-nav');
+hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hb.classList.toggle('open');hb.setAttribute('aria-expanded',o);});
+
+// Fade-up
+(function(){
+  var els=document.querySelectorAll('.fade-up');
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 
