@@ -1,4 +1,4 @@
-module.exports = async (req, res) => {
+﻿module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td style="vertical-align:middle;width:84px;padding-right:20px;">
-            <img src="https://jessica-villasenor-realestate.vercel.app/brand_assets/jessica.jpg"
+            <img src="https://villrealestate.com/brand_assets/jessica.jpg"
                  alt="Jessica Villaseñor" width="76" height="76"
                  style="display:block;border-radius:50%;border:2px solid #b18463;object-fit:cover;">
           </td>
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
   <!-- ── COPPER LABEL STRIP ── -->
   <tr>
     <td style="background:#b18463;padding:10px 40px;">
-      <p style="margin:0;font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#ffffff;">New Client Inquiry &nbsp;·&nbsp; Submitted via jessicavillasenor.com</p>
+      <p style="margin:0;font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#ffffff;">New Client Inquiry &nbsp;·&nbsp; Submitted via villrealestate.com</p>
     </td>
   </tr>
 
@@ -178,7 +178,7 @@ module.exports = async (req, res) => {
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td style="vertical-align:middle;width:84px;padding-right:20px;">
-            <img src="https://jessica-villasenor-realestate.vercel.app/brand_assets/jessica.jpg"
+            <img src="https://villrealestate.com/brand_assets/jessica.jpg"
                  alt="Jessica Villaseñor" width="76" height="76"
                  style="display:block;border-radius:50%;border:2px solid #b18463;object-fit:cover;">
           </td>
@@ -220,7 +220,7 @@ module.exports = async (req, res) => {
     <td style="background:#2c3426;padding:18px 40px;">
       <p style="margin:0;font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.40);line-height:1.7;">
         Jessica Villaseñor &nbsp;·&nbsp; Engel &amp; Völkers Reno &nbsp;·&nbsp; (775) 813-6992<br>
-        You're receiving this because you submitted an inquiry on jessicavillasenor.com.
+        You're receiving this because you submitted an inquiry on villrealestate.com.
       </p>
     </td>
   </tr>

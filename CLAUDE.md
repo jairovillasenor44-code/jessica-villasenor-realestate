@@ -1,9 +1,9 @@
-# CLAUDE.md — Jessica Villaseñor Real Estate Site
+﻿# CLAUDE.md — Jessica Villaseñor Real Estate Site
 
 ## Project
 - **Pages:** `index.html` (home), `about.html`, `listings.html`, `contact.html`, `faq.html`, `process.html`, `home-search.html`, `valuation.html`, `testimonials.html` — each self-contained with all CSS+JS inline (no shared stylesheet)
 - **Server:** `node serve.mjs` → localhost:3000. Routes: `/` → `index.html`, `/about`, `/listings`, `/contact`, `/process`, `/home-search`, `/valuation`, `/testimonials` (cleanURLs), `/faq.html`, `/api/contact` → `api/contact.js`
-- **Deployed:** `jessica-villasenor-realestate.vercel.app` (GitHub → Vercel auto-deploy on push to `main`)
+- **Deployed:** `villrealestate.com` (GitHub → Vercel auto-deploy on push to `main`)
 - **`vercel.json`:** `{ "framework": null, "cleanUrls": true }` — no build step; `cleanUrls` allows `/about` without `.html`; also handles `/process` and `/home-search`
 
 ## Running Node on This Machine
@@ -45,9 +45,9 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 - **GA4:** `G-D7P8XZKV6Q` — gtag snippet on every page before Google Fonts preconnect
 - **Open Graph + Twitter Card** meta tags on all 9 pages; `og:image` uses absolute Vercel URL
 - **Meta descriptions** on all 9 pages
-- **`sitemap.xml`** — all 9 pages, `jessicavillasenor.com` domain, priorities set (/ = 1.0, etc.)
-- **`robots.txt`** — `Allow: /`, Sitemap points to `jessicavillasenor.com/sitemap.xml`
-- **Uptime monitor** — Uptimerobot watching `jessica-villasenor-realestate.vercel.app` every 5 min; add second monitor for `jessicavillasenor.com` once domain is live
+- **`sitemap.xml`** — all 9 pages, `villrealestate.com` domain, priorities set (/ = 1.0, etc.)
+- **`robots.txt`** — `Allow: /`, Sitemap points to `villrealestate.com/sitemap.xml`
+- **Uptime monitor** — Uptimerobot watching `villrealestate.com` every 5 min; add second monitor for `villrealestate.com` once domain is live
 
 ## Section Order (home page index.html, top → bottom)
 Hero → Intro Strip → About Teaser → Contact CTA Strip → CMA vs Appraisal → Testimonials → Footer → Sticky CTA
@@ -68,7 +68,7 @@ Hero → Intro Strip → About Teaser → Contact CTA Strip → CMA vs Appraisal
 - **`testimonials.html`**: standalone testimonials page — 2×2 static grid of all 4 client reviews (no carousel); no buyer/seller labels; "Ready to write your own story?" CTA strip; added to `sitemap.xml`
 
 ## Remaining Launch Plan (domain not yet purchased)
-- **Phase 1:** Jessica buys `jessicavillasenor.com` on Namecheap (~$12/yr, auto-renew ON, her card)
+- **Phase 1:** Jessica buys `villrealestate.com` on Namecheap (~$12/yr, auto-renew ON, her card)
 - **Phase 2:** Connect domain to Vercel — A record `76.76.21.21`, CNAME `www` → `cname.vercel-dns.com`; add domain in Vercel dashboard
 - **Phase 3:** Google Search Console — verify domain, submit `sitemap.xml` (already built)
 - **Phase 4:** Google Business Profile — Jessica sets up at `business.google.com` (requires domain live; ~1 week to verify)
