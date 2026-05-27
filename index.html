@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -935,6 +935,12 @@
   .fade-up-d4 { transition-delay: .4s; }
 
   /* ─── MOBILE ─── */
+    @media (max-width: 1150px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-actions { display: none; }
+    .nav-hamburger { display: flex; }
+  }
   @media (max-width: 900px) {
     .about-teaser-grid { grid-template-columns: 1fr; gap: 40px; }
     .contact-cta-inner { grid-template-columns: 1fr; gap: 32px; }

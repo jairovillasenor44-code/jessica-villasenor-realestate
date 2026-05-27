@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -228,6 +228,12 @@
   .footer-legal { font-size: .68rem; color: rgba(255,255,255,.22); letter-spacing: .06em; }
 
   /* ─── MOBILE ─── */
+    @media (max-width: 1150px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-actions { display: none; }
+    .nav-hamburger { display: flex; }
+  }
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
