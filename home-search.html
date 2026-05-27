@@ -56,7 +56,7 @@
   .nav-faq:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.85);}
   nav.scrolled .nav-faq{color:var(--green-dk);border-color:rgba(44,52,38,.35);}
   nav.scrolled .nav-faq:hover{background:var(--green-dk);color:#fff;border-color:transparent;}
-  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:101;}
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:12px;z-index:101;}
   .nav-hamburger span{display:block;width:24px;height:2px;background:#fff;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .2s,background .4s;}
   nav.scrolled .nav-hamburger span{background:var(--ink);}
   .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -361,7 +361,7 @@
 .qni-links a:hover{background:rgba(177,132,99,.13);color:rgba(255,255,255,.9);}
 .qni-links a.qni-cur{color:#b18463;}
 .qni-links a svg{width:15px;height:15px;flex-shrink:0;opacity:.45;transition:opacity .2s;}
-.qni-links a:hover svg,.qni-links a.qni-cur svg{opacity:1;}
+.qni-links a:hover svg,.qni-links a.qni-cur svg{opacity:1;}@media(max-width:900px){#qni,#qni-bd{display:none!important;}}
 </style>
 <div id="qni-bd"></div>
 <div id="qni" role="navigation" aria-label="Quick navigation" aria-expanded="false">

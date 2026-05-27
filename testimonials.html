@@ -60,7 +60,7 @@
   .nav-faq:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.85);}
   nav.scrolled .nav-faq{color:var(--green-dk);border-color:rgba(44,52,38,.35);}
   nav.scrolled .nav-faq:hover{background:var(--green-dk);color:#fff;border-color:transparent;}
-  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:101;}
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:12px;z-index:101;}
   .nav-hamburger span{display:block;width:24px;height:2px;background:#fff;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .2s,background .4s;}
   nav.scrolled .nav-hamburger span{background:var(--ink);}
   .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -192,7 +192,7 @@
 
     <div class="testimonials-grid">
 
-      <div class="t-card fade-up">
+      <div class="t-card">
         <span class="t-quote-mark">&ldquo;</span>
         <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <p class="t-text">My fiancé and I bought our first house with a different realtor — all that realtor did was show us the house and never told us any details about it. Then we got Jessica, and what a complete 180. If you're looking for a realtor who's going to be honest with you and guide you every step of the process, she's the one.</p>
@@ -200,7 +200,7 @@
         <div class="t-name">— Edzar M.</div>
       </div>
 
-      <div class="t-card fade-up fade-up-d1">
+      <div class="t-card">
         <span class="t-quote-mark">&ldquo;</span>
         <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <p class="t-text">Jessica is really the best. We've been working with her since May in preparation to sell our home and find our next one. Her attention to detail, thoroughness, constant communication, and professionalism have been vital. She truly is in it for the best interest of her clients.</p>
@@ -208,7 +208,7 @@
         <div class="t-name">— Daisy Martinez</div>
       </div>
 
-      <div class="t-card fade-up fade-up-d2">
+      <div class="t-card">
         <span class="t-quote-mark">&ldquo;</span>
         <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <p class="t-text">Very friendly and knowledgeable. This was my third home purchased, and by far the easiest. She went out of her way to meet the inspectors and kept me fully informed at all times. Even months after the sale she's still available if I need her.</p>
@@ -216,7 +216,7 @@
         <div class="t-name">— Mike Zerr</div>
       </div>
 
-      <div class="t-card fade-up fade-up-d3">
+      <div class="t-card">
         <span class="t-quote-mark">&ldquo;</span>
         <div class="t-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <p class="t-text">Jessica is amazing to work with and works extremely hard to meet your needs, purchasing your new property and making the process very easy! I will definitely use Jessica for future purchases and highly recommend her services!</p>
@@ -271,7 +271,7 @@
 .qni-links a:hover{background:rgba(177,132,99,.13);color:rgba(255,255,255,.9);}
 .qni-links a.qni-cur{color:#b18463;}
 .qni-links a svg{width:15px;height:15px;flex-shrink:0;opacity:.45;transition:opacity .2s;}
-.qni-links a:hover svg,.qni-links a.qni-cur svg{opacity:1;}
+.qni-links a:hover svg,.qni-links a.qni-cur svg{opacity:1;}@media(max-width:900px){#qni,#qni-bd{display:none!important;}}
 </style>
 <div id="qni-bd"></div>
 <div id="qni" role="navigation" aria-label="Quick navigation" aria-expanded="false">
