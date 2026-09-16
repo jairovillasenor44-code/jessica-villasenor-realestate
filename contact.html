@@ -100,6 +100,22 @@
   .form-row textarea{min-height:110px;resize:vertical;}
   .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(177,132,99,.1);}
 
+  /* CONSENT */
+  .consent-block{margin:24px 0 26px;padding-left:16px;border-left:2px solid rgba(177,132,99,.35);}
+  .consent-check{display:flex;align-items:flex-start;gap:11px;cursor:pointer;margin-bottom:12px;}
+  .consent-check input{position:absolute;opacity:0;width:0;height:0;}
+  .consent-box{width:18px;height:18px;flex-shrink:0;margin-top:2px;border:1px solid var(--border);background:#F8F5F1;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
+  .consent-box svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .15s;}
+  .consent-check:hover .consent-box{border-color:var(--accent);}
+  .consent-check input:checked + .consent-box{background:var(--accent);border-color:var(--accent);}
+  .consent-check input:checked + .consent-box svg{opacity:1;}
+  .consent-check input:focus-visible + .consent-box{border-color:var(--accent);box-shadow:0 0 0 3px rgba(177,132,99,.25);}
+  .consent-check-text{font-size:.8rem;color:var(--ink);line-height:1.5;}
+  .consent-fine{font-size:.7rem;line-height:1.7;color:var(--muted);}
+  .consent-fine strong{font-weight:600;color:var(--ink);}
+  .consent-fine a{color:var(--accent-dk);border-bottom:1px solid rgba(177,132,99,.4);transition:color .2s,border-color .2s;}
+  .consent-fine a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
   /* SLIDE BUTTON */
   .slide-btn-wrap{position:relative;height:52px;background:var(--green-dk);border-radius:100px;overflow:hidden;margin-top:8px;user-select:none;touch-action:none;}
   .slide-btn-fill{position:absolute;top:0;bottom:0;left:0;width:0;background:var(--accent);border-radius:100px;}
@@ -118,7 +134,7 @@
   .footer-brand{font-family:'Gilda Display',serif;font-size:1.4rem;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.7);}
   .footer-tagline{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:32px;}
   .footer-divider{width:40px;height:1px;background:var(--accent);opacity:.4;margin:0 auto 32px;}
-  .footer-socials{display:flex;gap:32px;justify-content:center;margin-bottom:32px;}
+  .footer-socials{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:center;margin-bottom:32px;}
   .footer-socials a{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);transition:color .2s;}
   .footer-socials a:hover{color:rgba(255,255,255,.7);}
   .footer-legal{font-size:.65rem;color:rgba(255,255,255,.15);letter-spacing:.06em;}
@@ -240,6 +256,18 @@
           <label for="contact-message">How can we help?</label>
           <textarea id="contact-message" name="message" required></textarea>
         </div>
+        <div class="consent-block">
+          <label class="consent-check" for="contact-sms">
+            <input type="checkbox" id="contact-sms" name="smsConsent">
+            <span class="consent-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="consent-check-text">Yes, you can text me at the number above.</span>
+          </label>
+          <p class="consent-fine">
+            By submitting this form I agree to be contacted by <strong>Jessica Villaseñor</strong> via call, email, and text for real estate services. Reply STOP to unsubscribe or HELP for assistance at any time. Message and data rates may apply. Message frequency varies. Providing a phone number is optional, and consent to receive texts is not a condition of any service. See our <a href="privacy.html">Privacy Policy</a>.
+          </p>
+        </div>
         <div class="slide-btn-wrap" id="slide-btn-wrap">
           <div class="slide-btn-fill" id="slide-btn-fill"></div>
           <div class="slide-btn-handle" id="slide-btn-handle">
@@ -261,6 +289,7 @@
     <a href="https://www.instagram.com/jessicavillasenor_realtor" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://reno.evrealestate.com/en/our-advisors/jessica-villasenor/10212933-7691-48dc-9a54-11aea24695f4/29f000aa-5223-44e3-810e-e8243d4e6754" target="_blank" rel="noopener">E&amp;V Profile</a>
+    <a href="privacy.html">Privacy</a>
   </div>
   <div class="footer-legal">© 2026 · License # NV S.0202253 · Engel &amp; Völkers Reno · Equal Housing Opportunity</div>
 </footer>
@@ -346,7 +375,10 @@
           email: form.querySelector('[name="email"]').value,
           phone: form.querySelector('[name="phone"]').value,
           interest: form.querySelector('[name="interest"]').value,
-          message: form.querySelector('[name="message"]').value
+          message: form.querySelector('[name="message"]').value,
+          smsConsent: document.getElementById('contact-sms').checked
+            ? 'Yes ~ opted in to text messages'
+            : 'No ~ did not opt in to texts'
         };
         fetch('/api/contact', {
           method: 'POST',

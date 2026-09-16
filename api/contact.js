@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, email, phone, interest, message } = req.body || {};
+  const { name, email, phone, interest, message, smsConsent } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, error: 'Missing required fields' });
@@ -85,6 +85,12 @@ module.exports = async (req, res) => {
       <p style="margin:0 0 28px;font-size:15px;line-height:1.5;">
         <a href="mailto:${safeText(email)}" style="color:#2c3426;text-decoration:none;border-bottom:1px solid #b18463;padding-bottom:1px;">${safeText(email)}</a>
       </p>
+
+      <!-- Text message consent -->
+      ${smsConsent ? `<p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#b18463;">Text Message Consent</p>
+      <p style="margin:0 0 28px;font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:${/^Yes/i.test(String(smsConsent)) ? '#2c3426' : '#8a8a8a'};">
+        ${safeText(smsConsent)}
+      </p>` : ''}
 
       <!-- Divider -->
       <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
